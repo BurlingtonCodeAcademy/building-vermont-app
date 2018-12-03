@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => (
           <h2>
             <Link to={`/${document.node.id}`}>{document.node.name}</Link>
           </h2>
-          <p>{document.node.content}</p>
+          <p>{document.node.id}</p>
         </li>
       ))}
     </ul>
