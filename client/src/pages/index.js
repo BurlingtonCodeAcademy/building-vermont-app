@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => (
       {data.allStrapiBuilding.edges.map(document => (
         <li key={document.node.id}>
           <h2>
-            <Link to={`/${document.node.id}`}>{document.node.title}</Link>
+            <Link to={`/${document.node.id}`}>{document.node.name}</Link>
           </h2>
           <p>{document.node.content}</p>
         </li>
@@ -30,7 +30,6 @@ export const pageQuery = graphql`
         node {
           id
           name
-          construction
         }
       }
     }
