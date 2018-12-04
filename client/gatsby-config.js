@@ -19,8 +19,8 @@ module.exports = {
           // List of the Content Types you want to be able to request from Gatsby.
           'building',
           'architect',
-          'events',
-          'posts',
+          'event',
+          // 'posts',
         ],
       },
     },
@@ -40,4 +40,4 @@ module.exports = {
     },
     'gatsby-plugin-offline',
   ],
-}
+};
