@@ -8,7 +8,8 @@
     "client": "cd client && gatsby develop",
     "server": "cd api && strapi start",
     "dev": "npm run server | sleep 10 && npm run client",
-    "test": "cypress open"
+    "test": "cypress open",
+    "setup": "npm install & cd api && npm install & cd ../client && npm install"
   },
   "repository": {
     "type": "git",
