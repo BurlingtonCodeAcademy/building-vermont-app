@@ -6,7 +6,7 @@
   "scripts": {
     "client": "cd client && gatsby develop",
     "server": "cd api && strapi start",
-    "dev": "npm run server | npm run client",
+    "dev": "npm run server | sleep 10 && npm run client",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
