@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Building Vermont',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -19,6 +19,8 @@ module.exports = {
           // List of the Content Types you want to be able to request from Gatsby.
           'building',
           'architect',
+          'events',
+          'posts',
         ],
       },
     },

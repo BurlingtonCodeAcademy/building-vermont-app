@@ -4,16 +4,14 @@ import Layout from '../components/layout';
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <h1>These are all the buildings</h1>
     <ul>
       {data.allStrapiBuilding.edges.map(document => (
         <li key={document.node.id}>
           <h2>
             <Link to={`/${document.node.id}`}>{document.node.name}</Link>
           </h2>
-          <p>{document.node.id}</p>
+          <p>{document.node.description}</p>
         </li>
       ))}
     </ul>
@@ -30,6 +28,7 @@ export const pageQuery = graphql`
         node {
           id
           name
+          description
         }
       }
     }
