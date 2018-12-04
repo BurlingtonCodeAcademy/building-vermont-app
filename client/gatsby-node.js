@@ -16,14 +16,14 @@ const makeRequest = (graphql, request) =>
 
 // Implement the Gatsby API “createPages”. This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
 
-  const getArticles = makeRequest(
+  const getBuildings = makeRequest(
     graphql,
     `
     {
-      allStrapiArticle {
+      allStrapiBuilding {
         edges {
           node {
             id
@@ -33,11 +33,11 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     }
     `
   ).then(result => {
-    // Create pages for each article.
-    result.data.allStrapiArticle.edges.forEach(({ node }) => {
+    // Create pages for each building.
+    result.data.allStrapiBuilding.edges.forEach(({ node }) => {
       createPage({
         path: `/${node.id}`,
-        component: path.resolve(`src/templates/article.js`),
+        component: path.resolve(`src/templates/Building.js`),
         context: {
           id: node.id,
         },
@@ -45,6 +45,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     })
   })
 
-  // Query for articles nodes to use in creating pages.
-  return getArticles
+  // Query for Buildings nodes to use in creating pages.
+  return getBuildings
 }
