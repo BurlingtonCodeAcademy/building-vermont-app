@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "architect",
   "info": {
     "name": "architect",
     "description": ""
@@ -9,9 +9,23 @@
     "timestamps": true
   },
   "attributes": {
-    "Name": {
+    "name": {
       "default": "",
       "type": "string"
+    },
+    "buildings": {
+      "collection": "building",
+      "via": "architect"
+    },
+    "bio": {
+      "default": "",
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
     }
   }
 }
