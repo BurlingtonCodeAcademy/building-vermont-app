@@ -1,0 +1,27 @@
+{
+  "name": "building-vermont-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run server | sleep 10 && npm run client",
+    "client": "cd client && gatsby develop",
+    "server": "cd api && strapi start",
+    "dev": "npm run server | sleep 10 && npm run client",
+    "test": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BurlingtonCodeAcademy/building-vermont-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BurlingtonCodeAcademy/building-vermont-app/issues"
+  },
+  "homepage": "https://github.com/BurlingtonCodeAcademy/building-vermont-app#readme",
+  "devDependencies": {
+    "cypress": "^3.1.3"
+  }
+}
