@@ -16,3 +16,10 @@ npm run setup
 ```
 npm start
 ```
+
+**Testing**
+
+```
+npm install -g node-mongo-seeds
+npm test
+```

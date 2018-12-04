@@ -1,5 +1,7 @@
-{
-  "title": "test event",
-  "date": "Date.toISOString",
-  "location": "182 Main st, Burlington, VT"
-}
+[
+  {
+    "title": "test event",
+    "date": "Date.toISOString",
+    "location": "182 Main st, Burlington, VT"
+  }
+]

@@ -1,9 +1,11 @@
-{
-  "architect": "Test Man",
-  "style": "experimental",
-  "description": "this is an experimental building, built for testing purposes",
-  "name": "test house",
-  "street": "123 nowhere ave.",
-  "city": "Jericho",
-  "year": 1999
-}
+[
+  {
+    "architect": "Test Man",
+    "style": "experimental",
+    "description": "this is an experimental building, built for testing purposes",
+    "name": "test house",
+    "street": "123 nowhere ave.",
+    "city": "Jericho",
+    "year": 1999
+  }
+]

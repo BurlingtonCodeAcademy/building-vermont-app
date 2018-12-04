@@ -1,4 +1,6 @@
-{
-  "name": "Test Man",
-  "bio": "This man is a test. he is just a test for making a testing database"
-}
+[
+  {
+    "name": "Test Man",
+    "bio": "This man is a test. he is just a test for making a testing database"
+  }
+]
