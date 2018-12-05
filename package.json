@@ -9,6 +9,7 @@
     "server": "cd api && npm start",
     "test": "cypress open",
     "setup": "npm install && cd api && npm install && cd ../client && npm install",
+    "dump": "mongodump -h ds023463.mlab.com:23463 -d building-vermont -u historyman -p 17-prides-of-peacocks -o ./api/seeds && mongorestore -d building-vermont ./api/seeds/building-vermont",
     "seed": "cd api && seed"
   },
   "repository": {
