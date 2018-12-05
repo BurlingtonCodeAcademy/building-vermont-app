@@ -28,7 +28,6 @@ describe('Adds a building', () => {
     cy.contains('Test Name');
   });
   it('Deletes the building', () => {
-    cy.wait(500);
     cy.get('img[alt="filter_logo"]')
       .eq(1)
       .click();
@@ -41,6 +40,14 @@ describe('Adds a building', () => {
       .click();
     cy.get('.modal-content button')
       .eq(2)
+      .click();
+  });
+  it('Logs out', () => {
+    cy.get('button.btn-secondary')
+      .eq(0)
+      .click();
+    cy.get('button.dropdown-item')
+      .eq(1)
       .click();
   });
 });
