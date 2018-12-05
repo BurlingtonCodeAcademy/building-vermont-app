@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => (
           <h2>
             <Link to={`/${document.node.id}`}>{document.node.name}</Link>
           </h2>
-          <p>{document.node.description}</p>
+          <p>A {document.node.style} {document.node.type} built in {document.node.year}</p>
         </li>
       ))}
     </ul>
@@ -28,8 +28,13 @@ export const pageQuery = graphql`
         node {
           id
           name
+          style
+          year
+          type
           description
-        }
+          city
+          street
+            }
       }
     }
   }
