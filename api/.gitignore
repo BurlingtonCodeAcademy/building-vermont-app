@@ -3,12 +3,14 @@
 ############################
 
 .DS_Store
+.env
 .AppleDouble
 .LSOverride
 Icon
 .Spotlight-V100
 .Trashes
 ._*
+seeds/building-vermont/*
 
 
 ############################

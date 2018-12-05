@@ -20,7 +20,7 @@ module.exports = {
           'building',
           'architect',
           'event',
-          // 'posts',
+          'post',
         ],
       },
     },
