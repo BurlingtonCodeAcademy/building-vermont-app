@@ -6,9 +6,12 @@ const BuildingTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiBuilding.name}</h1>
     <p>
-      by <Link />
+      A {data.strapiBuilding.style} {data.strapiBuilding.type} built in {data.strapiBuilding.year}
     </p>
-    <p>{data.strapiBuilding.id}</p>
+    <p>{data.strapiBuilding.description}</p>
+
+    <p>Location: {data.strapiBuilding.street}, {data.strapiBuilding.city}</p>
+    
   </Layout>
 );
 
@@ -19,6 +22,12 @@ export const query = graphql`
     strapiBuilding(id: { eq: $id }) {
       id
       name
+      style
+      year
+      type
+      description
+      city
+      street
     }
   }
 `;

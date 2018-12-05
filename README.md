@@ -20,6 +20,8 @@ npm start
 **Testing**
 
 ```
-npm install -g node-mongo-seeds
+export CYPRESS_ADMIN_USERNAME=username
+export CYPRESS_ADMIN_PASSWORD=password
+
 npm test
 ```
