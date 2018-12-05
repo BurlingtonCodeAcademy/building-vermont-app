@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 
+
 const IndexPage = ({ data }) => (
   <Layout>
     <h1>These are all the buildings</h1>
