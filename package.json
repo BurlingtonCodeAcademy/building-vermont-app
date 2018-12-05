@@ -6,7 +6,7 @@
   "scripts": {
     "start": "concurrently - - kill-others \"npm run server\" \"sleep 10 && npm run client\"",
     "client": "cd client && gatsby develop",
-    "server": "cd api && strapi start",
+    "server": "cd api && npm start",
     "test": "cypress open",
     "setup": "npm install && cd api && npm install && cd ../client && npm install",
     "seed": "cd api && seed"
