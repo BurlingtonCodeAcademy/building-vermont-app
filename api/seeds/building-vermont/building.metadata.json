@@ -1,0 +1,1 @@
+{"options":{"validationLevel":"off","validationAction":"error"},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"building-vermont.building"},{"v":2,"unique":true,"key":{"name":1},"name":"name_1","ns":"building-vermont.building","background":true}],"uuid":"04d7163056a6490f858088172be1a571"}
