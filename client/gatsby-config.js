@@ -20,7 +20,7 @@ module.exports = {
           'building',
           'architect',
           'event',
-          //'posts',
+          // 'posts',
         ],
       },
     },
@@ -40,4 +40,4 @@ module.exports = {
     },
     'gatsby-plugin-offline',
   ],
-}
+};
