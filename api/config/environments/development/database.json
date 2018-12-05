@@ -4,16 +4,16 @@
     "default": {
       "connector": "strapi-hook-mongoose",
       "settings": {
-        "client": "${process.env.DATABASE_URI || ''}",
-        "host": "${process.env.DATABASE_HOST || ''}",
+        "client": "mongo",
+        "host": "ds023463.mlab.com",
         "srv": false,
-        "port": "${process.env.DATABASE_PORT || ''}",
-        "database": "${process.env.DATABASE_NAME || ''}",
-        "username": "${process.env.DATABASE_USERNAME || ''}",
-        "password": "${process.env.DATABASE_PASSWORD || ''}"
+        "port": 23463,
+        "database": "building-vermont",
+        "username": "historyman",
+        "password": "17-prides-of-peacocks"
       },
       "options": {
-        "authenticationDatabase": "${process.env.DATABASE_AUTHENTICATION_DATABASE || ''}",
+        "authenticationDatabase": "building-vermont",
         "ssl": false
       }
     }
