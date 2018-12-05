@@ -5,11 +5,15 @@ import Calendar from 'react-calendar';
 class MyCalendar extends Component {
   state = {
     date: new Date(),
+    event: {
+      when:'December 25, 2018',
+      name: 'Christmas Day'
+    }
   }
 
   onChange = date => this.setState({date});
 
-  tileContent = ({date}) => date.toISOString() === new Date('December 25, 2018').toISOString() ? <p>It's Christmas!</p> : console.log(date.toISOString()); 
+  tileContent = ({date}) => date.toISOString() === new Date('December 25, 2018').toISOString() ? <p>It's Christmas!</p> : console.log('bollocks'); 
 
   render() {
     return (
