@@ -11,6 +11,12 @@ npm install -g gatsby-cli
 npm run setup
 ```
 
+**Get a copy of the DB**
+
+```
+npm run dump
+```
+
 **Start development server**
 
 ```
