@@ -13,7 +13,7 @@
         "password": ""
       },
       "options": {
-        "authenticationDatabase": "",
+        "authenticationDatabase": "building-vermont",
         "ssl": false
       }
     }

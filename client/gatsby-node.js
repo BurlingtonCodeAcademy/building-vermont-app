@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 const path = require(`path`);
 
 const makeRequest = (graphql, request) =>
@@ -45,6 +47,59 @@ exports.createPages = ({ actions, graphql }) => {
     });
   });
 
+  const getEventDates = makeRequest(
+    graphql,
+    `
+    {
+      allStrapiEvent {
+        edges {
+          node {
+            date
+          }
+        }
+      }
+    }
+    `
+  ).then(result => {
+    // Create pages for each event date.
+    result.data.allStrapiEvent.edges.forEach(({ node }) => {
+      createPage({
+        path: `/events/${moment(node.date).format('MM-DD-YY')}`,
+        component: path.resolve(`src/templates/date.js`),
+        context: {
+          date: node.date,
+        },
+      });
+    });
+  });
+
+  const getEventNames = makeRequest(
+    graphql,
+    `
+    {
+      allStrapiEvent {
+        edges {
+          node {
+            name
+            date
+          }
+        }
+      }
+    }
+    `
+  ).then(result => {
+    // Create pages for each event name.
+    result.data.allStrapiEvent.edges.forEach(({ node }) => {
+      createPage({
+        path: `/events/${moment(node.date).format('MM-DD-YY')}/${(node.name).split(' ').join('-')}`,
+        component: path.resolve(`src/templates/event.js`),
+        context: {
+          name: node.name,
+        },
+      });
+    });
+  });
+
   const getArchitects = makeRequest(
     graphql,
     `
@@ -72,5 +127,5 @@ exports.createPages = ({ actions, graphql }) => {
   });
 
   // Queries for buildings and architects nodes to use in creating pages.
-  return Promise.all([getBuildings, getArchitects]);
+  return Promise.all([getBuildings, getEventDates, getEventNames, getArchitects]);
 };

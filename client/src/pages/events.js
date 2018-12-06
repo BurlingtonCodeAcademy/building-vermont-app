@@ -3,23 +3,25 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import moment from 'moment';
 
-const IndexPage = ({ data }) => (
+const EventPage = ({ data }) => (
   <Layout>
     <h1>Upcoming Events</h1>
     <ul>
       {data.allStrapiEvent.edges.map(document => (
-        <li key={document.node.id}>
+        <li key={(document.node.name).split(' ').join('-')}>
           <h2>
-            {document.node.name}
+          <Link to={`/events/${moment(document.node.date).format('MM-DD-YY')}`}>{moment(document.node.date).format('MMMM Do')}</Link>
           </h2>
-          <p>{moment(document.node.date).format("MMMM Do")}</p>
+          <p>
+          <Link to={`/events/${moment(document.node.date).format('MM-DD-YY')}/${(document.node.name).split(' ').join('-')}`}>{document.node.name}</Link>
+          </p>
         </li>
       ))}
     </ul>
   </Layout>
 );
 
-export default IndexPage;
+export default EventPage;
 
 export const pageQuery = graphql`
   query EventQuery {
