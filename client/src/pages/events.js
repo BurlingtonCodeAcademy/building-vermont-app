@@ -1,16 +1,24 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
+import Calendar from '../components/calendar';
+import '../components/calendar.css';
 import moment from 'moment';
 
 const EventPage = ({ data }) => (
   <Layout>
     <h1>Upcoming Events</h1>
+    <Calendar
+      className="App"
+      events={data.allStrapiEvent.edges.map(document => document.node)}
+    />
     <ul>
       {data.allStrapiEvent.edges.map(document => (
-        <li key={(document.node.name).split(' ').join('-')}>
+        <li key={document.node.name.split(' ').join('-')}>
           <h2>
-          <Link to={`/events/${(document.node.name).split(' ').join('-')}`}>{document.node.name}</Link>
+            <Link to={`/events/${document.node.name.split(' ').join('-')}`}>
+              {document.node.name}
+            </Link>
           </h2>
           <p>{moment(document.node.date).format('MMMM Do')}</p>
         </li>

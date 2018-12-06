@@ -5,11 +5,8 @@ import moment from 'moment';
 
 const EventTemplate = ({ data }) => (
   <Layout>
-    <h1>{moment(data.strapiEvent.date).format("MMMM Do")}</h1>
-    <p>
-      {data.strapiEvent.name}
-    </p>
-    
+    <h1>{moment(data.strapiEvent.date).format('MMMM Do')}</h1>
+    <p>{data.strapiEvent.name}</p>
   </Layout>
 );
 
