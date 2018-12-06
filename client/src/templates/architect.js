@@ -7,10 +7,10 @@ const ArchitectTemplate = ({ data }) => (
     <h1>{data.strapiArchitect.username}</h1>
     <ul>
       {data.strapiArchitect.architects.map(architect => (
-        <li key={article.id}>
+        // <li key={article.id}>
           <h2>{architect.name}</h2>
-          <p>{article.content}</p>
-        </li>
+          // <p>{article.content}</p>
+        // </li>
       ))}
     </ul>
   </Layout>
