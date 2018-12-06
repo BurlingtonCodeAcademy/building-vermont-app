@@ -4,13 +4,11 @@ import Layout from '../components/layout';
 
 const ArchitectTemplate = ({ data }) => (
   <Layout>
-    <h1>{data.strapiUser.username}</h1>
+    <h1>{data.strapiArchitect.username}</h1>
     <ul>
-      {data.strapiUser.articles.map(article => (
+      {data.strapiArchitect.architects.map(architect => (
         <li key={article.id}>
-          <h2>
-            <Link to={`/${article.id}`}>{article.title}</Link>
-          </h2>
+          <h2>{architect.name}</h2>
           <p>{article.content}</p>
         </li>
       ))}
