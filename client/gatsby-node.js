@@ -45,6 +45,32 @@ exports.createPages = ({ actions, graphql }) => {
     });
   });
 
+  const getEvents = makeRequest(
+    graphql,
+    `
+    {
+      allStrapiEvent {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+    }
+    `
+  ).then(result => {
+    // Create pages for each event.
+    result.data.allStrapiEvent.edges.forEach(({ node }) => {
+      createPage({
+        path: `/events/${(node.name).split(' ').join('-')}`,
+        component: path.resolve(`src/templates/event.js`),
+        context: {
+          name: node.name,
+        },
+      });
+    });
+  });
+
   const getArchitects = makeRequest(
     graphql,
     `
@@ -72,5 +98,5 @@ exports.createPages = ({ actions, graphql }) => {
   });
 
   // Queries for buildings and architects nodes to use in creating pages.
-  return Promise.all([getBuildings, getArchitects]);
+  return Promise.all([getBuildings, getEvents, getArchitects]);
 };

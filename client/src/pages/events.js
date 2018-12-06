@@ -8,9 +8,9 @@ const IndexPage = ({ data }) => (
     <h1>Upcoming Events</h1>
     <ul>
       {data.allStrapiEvent.edges.map(document => (
-        <li key={document.node.id}>
+        <li key={(document.node.name).split(' ').join('-')}>
           <h2>
-            {document.node.name}
+          <Link to={`/events/${(document.node.name).split(' ').join('-')}`}>{document.node.name}</Link>
           </h2>
           <p>{moment(document.node.date).format("MMMM Do")}</p>
         </li>
