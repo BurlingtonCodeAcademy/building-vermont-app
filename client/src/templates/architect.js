@@ -9,9 +9,16 @@ const ArchitectTemplate = ({ data }) => (
       {data.strapiArchitect.bio}
     </p>
     <p>
-      {data.strapiArchitect.buildings.name}
     </p>
     <ul>
+    {data.strapiArchitect.buildings.map(document => (
+        <li key={document.id}>
+          <h2>
+            <Link to={`/${document.id}`}>{document.name}</Link>
+          </h2>
+          <p>A {document.style} {document.type} built in {document.year}</p>
+        </li>
+      ))}
       {/* {data.strapiArchitect.architects.map(architect => (
         <li key={article.id}>
           <h2>{architect.name}</h2>
