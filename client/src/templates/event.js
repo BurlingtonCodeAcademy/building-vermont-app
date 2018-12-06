@@ -5,9 +5,9 @@ import moment from 'moment';
 
 const EventTemplate = ({ data }) => (
   <Layout>
-    <h1>{moment(data.strapiEvent.date).format("MMMM Do")}</h1>
+    <h1>{data.strapiEvent.name}</h1>
     <p>
-      {data.strapiEvent.name}
+    {moment(data.strapiEvent.date).format("MMMM Do")}
     </p>
     
   </Layout>

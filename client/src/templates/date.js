@@ -7,7 +7,7 @@ const DateTemplate = ({ data }) => (
   <Layout>
     <h1>{moment(data.strapiEvent.date).format("MMMM Do")}</h1>
     <p>
-      {data.strapiEvent.name}
+    <Link to={`/events/${moment(data.strapiEvent.date).format('MM-DD-YY')}/${(data.strapiEvent.name).split(' ').join('-')}`}>{data.strapiEvent.name}</Link>
     </p>
     
   </Layout>
