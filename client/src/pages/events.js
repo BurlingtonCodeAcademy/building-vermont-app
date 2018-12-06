@@ -15,12 +15,15 @@ const EventPage = ({ data }) => (
     <ul>
       {data.allStrapiEvent.edges.map(document => (
         <li key={document.node.name.split(' ').join('-')}>
-          <h2>
-            <Link to={`/events/${document.node.name.split(' ').join('-')}`}>
+          <p>
+            <Link
+              to={`/events/${moment(document.node.date).format(
+                'MM-DD-YY'
+              )}/${document.node.name.split(' ').join('-')}`}
+            >
               {document.node.name}
             </Link>
-          </h2>
-          <p>{moment(document.node.date).format('MMMM Do')}</p>
+          </p>
         </li>
       ))}
     </ul>
