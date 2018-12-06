@@ -6,7 +6,10 @@ const ArchitectTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiArchitect.name}</h1>
     <p>
-    {data.strapiArchitect.bio}
+      {data.strapiArchitect.bio}
+    </p>
+    <p>
+      {data.strapiArchitect.buildings.name}
     </p>
     <ul>
       {/* {data.strapiArchitect.architects.map(architect => (
@@ -27,6 +30,14 @@ export const query = graphql`
       id
       name
       bio
+      buildings {
+            id
+            name
+            style
+            year
+            type
+        }
     }
   }
 `;
+
