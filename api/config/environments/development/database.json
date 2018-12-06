@@ -5,12 +5,12 @@
       "connector": "strapi-hook-mongoose",
       "settings": {
         "client": "mongo",
-        "host": "ds023463.mlab.com",
+        "host": "127.0.0.1",
         "srv": false,
-        "port": 23463,
+        "port": "27017",
         "database": "building-vermont",
-        "username": "historyman",
-        "password": "17-prides-of-peacocks"
+        "username": "",
+        "password": ""
       },
       "options": {
         "authenticationDatabase": "building-vermont",
