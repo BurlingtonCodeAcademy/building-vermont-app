@@ -2,28 +2,31 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 
-const IndexPage = ({ data }) => (
+const YearTemplate = ({ data }) => (
   <Layout>
-    <h1>These are all the buildings</h1>
+    <h1>Built in {data.allStrapiBuilding.edges[0].node.year}</h1>
     <ul>
       {data.allStrapiBuilding.edges.map(document => (
         <li key={document.node.id}>
           <h2>
             <Link to={`/buildings/${document.node.id}`}>{document.node.name}</Link>
           </h2>
-          <p>A {document.node.style} {document.node.type} built in {document.node.year}</p>
+          <p>A {document.node.style} {document.node.type} in {document.node.city}</p>
         </li>
       ))}
     </ul>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 );
 
-export default IndexPage;
+export default YearTemplate;
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    allStrapiBuilding {
+export const query = graphql`
+  query YearTemplate($year: Int!) {
+    allStrapiBuilding(
+      filter: {
+        year: { eq: $year }
+      }
+    ) {
       edges {
         node {
           id
@@ -34,8 +37,14 @@ export const pageQuery = graphql`
           description
           city
           street
-            }
+          architect {
+            id
+            name
+            bio
+          }
       }
     }
   }
+}
+
 `;

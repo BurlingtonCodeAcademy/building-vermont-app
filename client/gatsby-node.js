@@ -38,10 +38,36 @@ exports.createPages = ({ actions, graphql }) => {
     // Create pages for each building.
     result.data.allStrapiBuilding.edges.forEach(({ node }) => {
       createPage({
-        path: `/${node.id}`,
+        path: `/buildings/${node.id}`,
         component: path.resolve(`src/templates/building.js`),
         context: {
           id: node.id,
+        },
+      });
+    });
+  });
+
+  const getYears = makeRequest(
+    graphql,
+    `
+    {
+      allStrapiBuilding {
+        edges {
+          node {
+            year
+          }
+        }
+      }
+    }
+    `
+  ).then(result => {
+    // Create pages for each year.
+    result.data.allStrapiBuilding.edges.forEach(({ node }) => {
+      createPage({
+        path: `/buildings/${node.year}`,
+        component: path.resolve(`src/templates/year.js`),
+        context: {
+          year: node.year,
         },
       });
     });
@@ -127,5 +153,5 @@ exports.createPages = ({ actions, graphql }) => {
   });
 
   // Queries for buildings and architects nodes to use in creating pages.
-  return Promise.all([getBuildings, getEventDates, getEventNames, getArchitects]);
+  return Promise.all([getBuildings, getYears, getEventDates, getEventNames, getArchitects]);
 };

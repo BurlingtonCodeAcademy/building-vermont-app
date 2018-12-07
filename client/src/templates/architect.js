@@ -14,7 +14,7 @@ const ArchitectTemplate = ({ data }) => (
     {data.strapiArchitect.buildings.map(document => (
         <li key={document.id}>
           <h2>
-            <Link to={`/${document.id}`}>{document.name}</Link>
+            <Link to={`/buildings/${document.id}`}>{document.name}</Link>
           </h2>
           <p>A {document.style} {document.type} built in {document.year}</p>
         </li>

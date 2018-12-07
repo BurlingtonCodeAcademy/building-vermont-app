@@ -5,7 +5,7 @@ import moment from 'moment';
 
 const ArchitectPage = ({ data }) => (
   <Layout>
-    <h1>Upcoming Events</h1>
+    <h1>Architects</h1>
     <ul>
       {data.allStrapiArchitect.edges.map(document => (
         <li key={document.node.id}>
@@ -14,7 +14,7 @@ const ArchitectPage = ({ data }) => (
               {document.node.name}
             </Link>
           </h2>
-          <p>{moment(document.node.date).format('MMMM Do')}</p>
+          <p>{document.node.bio}</p>
         </li>
       ))}
     </ul>
@@ -30,6 +30,7 @@ export const pageQuery = graphql`
         node {
           id
           name
+          bio
         }
       }
     }

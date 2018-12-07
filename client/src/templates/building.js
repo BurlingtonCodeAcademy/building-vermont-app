@@ -5,12 +5,19 @@ import Layout from '../components/layout';
 const BuildingTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiBuilding.name}</h1>
-    <p>
-      A {data.strapiBuilding.style} {data.strapiBuilding.type} built in {data.strapiBuilding.year}
-    </p>
     <p>{data.strapiBuilding.description}</p>
 
-    <p>Location: {data.strapiBuilding.street}, {data.strapiBuilding.city}</p>
+    <p>
+      Year: <Link to={`/buildings/${data.strapiBuilding.year}`}>{data.strapiBuilding.year}</Link>
+    </p>
+    <p>
+      Style: <Link to={`/buildings/${(data.strapiBuilding.style).split(' ').join('-')}`}>{data.strapiBuilding.style}</Link>
+      </p>
+      <p>
+      Type: <Link to={`/buildings/${(data.strapiBuilding.type).split(' ').join('-')}`}>{data.strapiBuilding.type}</Link>
+      </p>
+
+    <p>Location: {data.strapiBuilding.street}, <Link to={`/buildings/${(data.strapiBuilding.city).split(' ').join('-')}`}>{data.strapiBuilding.city}</Link></p>
     
   </Layout>
 );
@@ -28,6 +35,11 @@ export const query = graphql`
       description
       city
       street
+      architect {
+        id
+        name
+        bio
+      }
     }
   }
 `;
