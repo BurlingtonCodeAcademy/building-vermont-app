@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 const BuildingTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiBuilding.name}</h1>
+    <h3> by <Link to={`/architects/${data.strapiBuilding.architect.id}`}>{data.strapiBuilding.architect.name}</Link></h3>
     <p>{data.strapiBuilding.description}</p>
 
     <p>
