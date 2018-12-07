@@ -116,7 +116,7 @@ exports.createPages = ({ actions, graphql }) => {
     // Create pages for each style.
     result.data.allStrapiBuilding.edges.forEach(({ node }) => {
       createPage({
-        path: `/buildings/${node.style}`,
+        path: `/buildings/${(node.style).split(' ').join('-')}`,
         component: path.resolve(`src/templates/style.js`),
         context: {
           style: node.style,
@@ -142,7 +142,7 @@ exports.createPages = ({ actions, graphql }) => {
     // Create pages for each type.
     result.data.allStrapiBuilding.edges.forEach(({ node }) => {
       createPage({
-        path: `/buildings/${node.type}`,
+        path: `/buildings/${(node.type).split(' ').join('-')}`,
         component: path.resolve(`src/templates/type.js`),
         context: {
           type: node.type,
