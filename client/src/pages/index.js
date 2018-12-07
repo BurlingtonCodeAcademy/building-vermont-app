@@ -1,41 +1,21 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
-import Layout from '../components/layout';
+import React from 'react'
+import { Link } from 'gatsby'
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <h1>These are all the buildings</h1>
-    <ul>
-      {data.allStrapiBuilding.edges.map(document => (
-        <li key={document.node.id}>
-          <h2>
-            <Link to={`/buildings/${document.node.id}`}>{document.node.name}</Link>
-          </h2>
-          <p>A {document.node.style} {document.node.type} built in {document.node.year}</p>
-        </li>
-      ))}
-    </ul>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-);
+import './index.css'
 
-export default IndexPage;
+const IndexPage = () => (
+  <div className="row">
+    <div className="column">
+      <div>Yesterday</div>
+      <div className="box"><Link to="/architects">Architects</Link></div>
+      <div className="box"><Link to="/buildings">Buildings</Link></div>
+    </div>
+    <div className="column">
+      <div>Today</div>
+      <div className="box"><Link to="/posts">Blog</Link></div>
+      <div className="box"><Link to="/events">Calendar</Link></div>
+    </div>
+  </div>
+)
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    allStrapiBuilding {
-      edges {
-        node {
-          id
-          name
-          style
-          year
-          type
-          description
-          city
-          street
-            }
-      }
-    }
-  }
-`;
+export default IndexPage
