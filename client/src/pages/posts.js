@@ -5,7 +5,6 @@ import moment from 'moment';
 
 const PostPage = ({ data }) => (
   <Layout>
-    <h1>The Future of Architecture in Vermont Blog</h1>
     <ul>
       {data.allStrapiPost.edges.map(document => (
         <li key={document.node.id}>
