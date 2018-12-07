@@ -30,6 +30,7 @@ export const pageQuery = graphql`
     allStrapiPost {
       edges {
         node {
+          id
           title
           body
           author
