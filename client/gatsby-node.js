@@ -73,6 +73,84 @@ exports.createPages = ({ actions, graphql }) => {
     });
   });
 
+  const getCity = makeRequest(
+    graphql,
+    `
+    {
+      allStrapiBuilding {
+        edges {
+          node {
+            city
+          }
+        }
+      }
+    }
+    `
+  ).then(result => {
+    // Create pages for each city.
+    result.data.allStrapiBuilding.edges.forEach(({ node }) => {
+      createPage({
+        path: `/buildings/${node.city}`,
+        component: path.resolve(`src/templates/city.js`),
+        context: {
+          city: node.city,
+        },
+      });
+    });
+  });
+
+  const getStyle = makeRequest(
+    graphql,
+    `
+    {
+      allStrapiBuilding {
+        edges {
+          node {
+            style
+          }
+        }
+      }
+    }
+    `
+  ).then(result => {
+    // Create pages for each style.
+    result.data.allStrapiBuilding.edges.forEach(({ node }) => {
+      createPage({
+        path: `/buildings/${node.style}`,
+        component: path.resolve(`src/templates/style.js`),
+        context: {
+          style: node.style,
+        },
+      });
+    });
+  });
+
+  const getType = makeRequest(
+    graphql,
+    `
+    {
+      allStrapiBuilding {
+        edges {
+          node {
+            type
+          }
+        }
+      }
+    }
+    `
+  ).then(result => {
+    // Create pages for each type.
+    result.data.allStrapiBuilding.edges.forEach(({ node }) => {
+      createPage({
+        path: `/buildings/${node.type}`,
+        component: path.resolve(`src/templates/type.js`),
+        context: {
+          type: node.type,
+        },
+      });
+    });
+  });
+
   const getEventDates = makeRequest(
     graphql,
     `
@@ -153,5 +231,5 @@ exports.createPages = ({ actions, graphql }) => {
   });
 
   // Queries for buildings and architects nodes to use in creating pages.
-  return Promise.all([getBuildings, getYears, getEventDates, getEventNames, getArchitects]);
+  return Promise.all([getBuildings, getYears, getCity, getStyle, getType, getEventDates, getEventNames, getArchitects]);
 };
