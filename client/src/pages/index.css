@@ -1,4 +1,4 @@
-.row, .column {
+.index-row, .index-column {
   display: flex;
   /* border: 1px solid black; */
   justify-content: center;
@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-.row {
+.index-row {
   display: grid;
   margin-left: 10px;
   margin-right: 10px;
@@ -21,7 +21,7 @@ a {
   color: red;
 }
 
-.column {
+.index-column {
   flex-direction: column;
 }
 

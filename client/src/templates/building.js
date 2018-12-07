@@ -20,7 +20,6 @@ const BuildingTemplate = ({ data }) => (
       </p>
 
     <p>Location: {data.strapiBuilding.street}, <Link to={`/buildings/${(data.strapiBuilding.city).split(' ').join('-')}`}>{data.strapiBuilding.city}</Link></p>
-    <Footer />
   </Layout>
 );
 

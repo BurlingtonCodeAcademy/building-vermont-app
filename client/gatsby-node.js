@@ -90,7 +90,7 @@ exports.createPages = ({ actions, graphql }) => {
     // Create pages for each city.
     result.data.allStrapiBuilding.edges.forEach(({ node }) => {
       createPage({
-        path: `/buildings/${node.city}`,
+        path: `/buildings/${(node.city).split(' ').join('-')}`,
         component: path.resolve(`src/templates/city.js`),
         context: {
           city: node.city,
@@ -230,12 +230,6 @@ exports.createPages = ({ actions, graphql }) => {
     });
   });
 
-  const aboutPage = createPage({
-    path: `/about`,
-    component: path.resolve(`src/pages/about.js`),
-  });
-
-
   // Queries for buildings and architects nodes to use in creating pages.
-  return Promise.all([getBuildings, getYears, getCity, getStyle, getType, getEventDates, getEventNames, getArchitects, aboutPage]);
+  return Promise.all([getBuildings, getYears, getCity, getStyle, getType, getEventDates, getEventNames, getArchitects]);
 };

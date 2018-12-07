@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import dateFns from 'date-fns';
+import './calendar.css';
 
 class Calendar extends Component {
   constructor() {
