@@ -230,6 +230,12 @@ exports.createPages = ({ actions, graphql }) => {
     });
   });
 
+  const aboutPage = createPage({
+    path: `/about`,
+    component: path.resolve(`src/pages/about.js`),
+  });
+
+
   // Queries for buildings and architects nodes to use in creating pages.
-  return Promise.all([getBuildings, getYears, getCity, getStyle, getType, getEventDates, getEventNames, getArchitects]);
+  return Promise.all([getBuildings, getYears, getCity, getStyle, getType, getEventDates, getEventNames, getArchitects, aboutPage]);
 };
