@@ -80,7 +80,7 @@ class Footer extends React.Component{
   render() {
     return (
       <div className="footer">
-        <form enctype="text/plain" method="POST" action={this.action} className="contact-form">
+        <form encType="text/plain" method="POST" action={this.action} className="contact-form">
           <NameInput />
           <EmailInput />
           <TextInput />
