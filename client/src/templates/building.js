@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
+import Footer from '../components/footer'
 
 const BuildingTemplate = ({ data }) => (
   <Layout>
@@ -18,7 +19,7 @@ const BuildingTemplate = ({ data }) => (
       </p>
 
     <p>Location: {data.strapiBuilding.street}, <Link to={`/buildings/${(data.strapiBuilding.city).split(' ').join('-')}`}>{data.strapiBuilding.city}</Link></p>
-    
+    <Footer />
   </Layout>
 );
 
