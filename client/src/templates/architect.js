@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
+import marked from 'marked';
 
 const ArchitectTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiArchitect.name}</h1>
-    <p>
-      {data.strapiArchitect.bio}
-    </p>
+    <p dangerouslySetInnerHTML={{ __html: (marked(data.strapiArchitect.bio))}} />
     <p>
     </p>
     <ul>

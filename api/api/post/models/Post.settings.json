@@ -17,14 +17,6 @@
       "default": "",
       "type": "string"
     },
-    "image1": {
-      "default": "",
-      "type": "integer"
-    },
-    "image2": {
-      "default": "",
-      "type": "integer"
-    },
     "date": {
       "default": "",
       "type": "date"
@@ -32,6 +24,12 @@
     "body": {
       "default": "",
       "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
     }
   }
 }

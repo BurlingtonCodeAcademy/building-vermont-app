@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 
 const TypeTemplate = ({ data }) => (
   <Layout>
-    <h1>{data.allStrapiBuilding.edges[0].node.type}s</h1>
+    <h1>{data.allStrapiBuilding.edges[0].node.type}</h1>
     <ul>
       {data.allStrapiBuilding.edges.map(document => (
         <li key={document.node.id}>
@@ -25,6 +25,9 @@ export const query = graphql`
     allStrapiBuilding(
       filter: {
         type: { eq: $type }
+      }
+      sort: {
+        fields: [ name ], order: ASC
       }
     ) {
       edges {

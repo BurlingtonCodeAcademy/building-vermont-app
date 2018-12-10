@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
-import Footer from '../components/footer'
+import marked from 'marked';
 
 const BuildingTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiBuilding.name}</h1>
     <h3> by <Link to={`/architects/${data.strapiBuilding.architect.id}`}>{data.strapiBuilding.architect.name}</Link></h3>
-    <p>{data.strapiBuilding.description}</p>
+    <p dangerouslySetInnerHTML={{ __html: (marked(data.strapiBuilding.description))}} />
 
     <p>
       Year: <Link to={`/buildings/${data.strapiBuilding.year}`}>{data.strapiBuilding.year}</Link>
