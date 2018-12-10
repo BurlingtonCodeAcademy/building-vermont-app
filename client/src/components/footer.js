@@ -12,12 +12,12 @@ class NameInput extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
   }
 
   render() {
     return (
-        <input type="text" name="name" placeholder="name" value={this.state.value} onChange={this.handleChange} className="name-input" />
+      <input type="text" name="name" placeholder="name" value={this.state.value} onChange={this.handleChange} className="name-input" />
     )
   }
 }
@@ -32,17 +32,17 @@ class TextInput extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
   }
 
   render() {
     return (
-        <textarea value={this.state.value} name="comment" onChange={this.handleChange} className="body" />
+      <textarea value={this.state.value} name="comment" onChange={this.handleChange} className="body" />
     )
   }
 }
 
-class EmailInput extends React.Component{
+class EmailInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -52,7 +52,7 @@ class EmailInput extends React.Component{
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
   }
 
   render() {
@@ -62,7 +62,7 @@ class EmailInput extends React.Component{
   }
 }
 
-class Footer extends React.Component{
+class Footer extends React.Component {
   constructor(props) {
     super(props);
     //this.handleSubmit = this.handleSubmit.bind(this);
@@ -81,10 +81,16 @@ class Footer extends React.Component{
     return (
       <div className="footer">
         <form encType="text/plain" method="POST" action={this.action} className="contact-form">
-          <NameInput />
-          <EmailInput />
-          <TextInput />
-          <input type="submit" value="Submit" className="submit-button" />
+          <div className="form-row">
+            <div className="form-column">
+              <NameInput />
+              <EmailInput />
+            </div>
+            <TextInput />
+            <div className="form-column">
+              <input type="submit" value="Submit" className="submit-button" />
+            </div>
+          </div>
         </form>
       </div>
     )

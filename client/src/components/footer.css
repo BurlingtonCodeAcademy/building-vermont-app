@@ -3,31 +3,58 @@
   background-color: lightgray;
   width: 100%;
   justify-content: space-around;
+  padding-left: 40px;
 }
 
 .contact-form{
+  border: 0px solid black;
+  width: 50em;
   margin: 10px;
-  display:  grid;
+  display: flex;
+  flex-direction: column;
+  /* display:  grid;
   grid-template-rows: 1fr 3fr 1fr;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 
         "name email"
         "body body"
-        "submit submit"
+        "submit submit" */
+}
+
+.form-row {
+  display: flex;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .name-input {
-  grid-area: "name"
+  margin: 2px;
+  padding: 2px;
+  flex: 1;
+  /* grid-area: "name" */
 }
 
 .email-input {
-  grid-area: "email"
+  margin: 2px;
+  padding: 2px;
+  flex: 1;
+  /* grid-area: "email" */
 }
 
 .body {
-  grid-area: "body";
+  margin: 2px;
+  padding: 2px;
+  width: 18em;
+  /* grid-area: "body"; */
 }
 
 .submit-button {
-  grid-area: "submit";
+  margin: 2px;
+  padding: 2px;
+  width: 7em;
+  /* grid-area: "submit"; */
 }
