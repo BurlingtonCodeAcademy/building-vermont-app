@@ -27,7 +27,11 @@ export default PostPage;
 
 export const pageQuery = graphql`
   query PostQuery {
-    allStrapiPost {
+    allStrapiPost(
+      sort: {
+        fields: [ date ], order: DESC
+      }
+    ) {
       edges {
         node {
           id

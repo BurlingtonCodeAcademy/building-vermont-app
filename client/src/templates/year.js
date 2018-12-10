@@ -26,6 +26,9 @@ export const query = graphql`
       filter: {
         year: { eq: $year }
       }
+      sort: {
+        fields: [ name ], order: ASC
+      }
     ) {
       edges {
         node {

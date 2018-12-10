@@ -24,7 +24,11 @@ export default ArchitectPage;
 
 export const pageQuery = graphql`
   query ArchitectQuery {
-    allStrapiArchitect {
+    allStrapiArchitect(
+      sort: {
+        fields: [ name ], order: ASC
+      }
+    ) {
       edges {
         node {
           id
