@@ -7,6 +7,7 @@ const EventTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiEvent.name}</h1>
     <p>{moment(data.strapiEvent.date).format('MMMM Do')}</p>
+    <a href={data.strapiEvent.link}>{data.strapiEvent.link}</a>
   </Layout>
 );
 
@@ -18,6 +19,7 @@ export const query = graphql`
       id
       name
       date
+      link
     }
   }
 `;

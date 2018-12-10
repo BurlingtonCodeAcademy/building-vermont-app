@@ -32,7 +32,7 @@ export default ArchitectTemplate;
 
 export const query = graphql`
   query ArchitectTemplate($id: String!) {
-    strapiArchitect(id: { eq: $id },) {
+    strapiArchitect(id: { eq: $id }) {
       id
       name
       bio
