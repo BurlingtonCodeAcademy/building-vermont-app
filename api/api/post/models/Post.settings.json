@@ -17,14 +17,6 @@
       "default": "",
       "type": "string"
     },
-    "image1": {
-      "default": "",
-      "type": "integer"
-    },
-    "image2": {
-      "default": "",
-      "type": "integer"
-    },
     "date": {
       "default": "",
       "type": "date"
