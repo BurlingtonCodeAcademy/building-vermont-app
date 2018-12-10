@@ -11,6 +11,16 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    //plugins for images
+    `gatsby-remark-copy-linked-files`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: 400,
+      },
+    },
     {
       resolve: 'gatsby-source-strapi',
       options: {
