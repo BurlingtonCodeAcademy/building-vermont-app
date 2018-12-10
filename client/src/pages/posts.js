@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import moment from 'moment';
+import marked from 'marked';
 
 const PostPage = ({ data }) => (
   <Layout>
@@ -12,8 +13,8 @@ const PostPage = ({ data }) => (
           <h2>
             {document.node.title}
           </h2>
-            
-            <div dangerouslySetInnerHTML={{ __html: (document.node.body)}} />          
+
+            <div dangerouslySetInnerHTML={{ __html: (marked(document.node.body))}} />          
           <p>Posted by: {document.node.author}
           </p>
         </li>
