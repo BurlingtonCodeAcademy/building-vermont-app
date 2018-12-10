@@ -22,7 +22,11 @@ export default BuildingPage;
 
 export const pageQuery = graphql`
   query BuildingQuery {
-    allStrapiBuilding {
+    allStrapiBuilding(
+      sort: {
+        fields: [ name ], order: ASC
+      }
+    ) {
       edges {
         node {
           id
