@@ -7,7 +7,7 @@ import Img from 'gatsby-image';
 const ArchitectTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiArchitect.name}</h1>
-    <center><Img fixed={data.strapiArchitect.image.childImageSharp.fixed} /></center>
+    <Img fixed={data.strapiArchitect.image.childImageSharp.fixed} />
     <p dangerouslySetInnerHTML={{ __html: (marked(data.strapiArchitect.bio))}} />
     <p>
     </p>

@@ -39,6 +39,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
+        showCaptions: 'true',
         name: 'gatsby-starter-default',
         short_name: 'starter',
         start_url: '/',
