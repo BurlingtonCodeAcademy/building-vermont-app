@@ -13,10 +13,6 @@
       "default": "",
       "type": "string"
     },
-    "body": {
-      "default": "",
-      "type": "string"
-    },
     "author": {
       "default": "",
       "type": "string"
@@ -32,6 +28,10 @@
     "date": {
       "default": "",
       "type": "date"
+    },
+    "body": {
+      "default": "",
+      "type": "text"
     }
   }
 }
