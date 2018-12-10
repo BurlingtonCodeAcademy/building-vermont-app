@@ -9,12 +9,11 @@ const ArchitectPage = ({ data }) => (
     <ul>
       {data.allStrapiArchitect.edges.map(document => (
         <li key={document.node.id}>
-          <h2>
+          <h3>
             <Link to={`architects/${document.node.id}`}>
               {document.node.name}
             </Link>
-          </h2>
-          <div dangerouslySetInnerHTML={{ __html: (document.node.bio)}} />
+          </h3>
         </li>
       ))}
     </ul>
