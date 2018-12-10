@@ -37,7 +37,7 @@ class TextInput extends React.Component {
 
   render() {
     return (
-      <textarea value={this.state.value} name="comment" onChange={this.handleChange} className="body" />
+      <textarea value={this.state.value} name="comment" onChange={this.handleChange} className="form-body" />
     )
   }
 }
