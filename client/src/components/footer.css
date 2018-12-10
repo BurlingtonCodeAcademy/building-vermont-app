@@ -32,6 +32,8 @@
 }
 
 .name-input {
+  border: 1px solid #777;
+  border-radius: 3px;
   margin: 2px;
   padding: 2px;
   flex: 1;
@@ -39,6 +41,8 @@
 }
 
 .email-input {
+  border: 1px solid #777;
+  border-radius: 3px;
   margin: 2px;
   padding: 2px;
   flex: 1;
@@ -46,6 +50,8 @@
 }
 
 .form-body {
+  border: 1px solid #777;
+  border-radius: 3px;
   margin: 2px;
   padding: 2px;
   width: 18em;
@@ -53,6 +59,10 @@
 }
 
 .submit-button {
+  border: 1px solid #777;
+  border-radius: 3px;
+  color: #777;
+  background-color: #fff; 
   margin: 2px;
   padding: 2px;
   width: 100%;
