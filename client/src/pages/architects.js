@@ -14,7 +14,6 @@ const ArchitectPage = ({ data }) => (
               {document.node.name}
             </Link>
           </h2>
-          <div dangerouslySetInnerHTML={{ __html: (document.node.bio)}} />
         </li>
       ))}
     </ul>
