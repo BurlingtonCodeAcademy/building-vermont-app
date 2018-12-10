@@ -28,7 +28,7 @@
 .form-column {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .name-input {
@@ -55,6 +55,6 @@
 .submit-button {
   margin: 2px;
   padding: 2px;
-  width: 7em;
+  width: 100%;
   /* grid-area: "submit"; */
 }

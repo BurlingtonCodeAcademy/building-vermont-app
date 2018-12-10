@@ -88,6 +88,7 @@ class Footer extends React.Component {
             </div>
             <TextInput />
             <div className="form-column">
+            <div>Questions? Comments?</div>
               <input type="submit" value="Submit" className="submit-button" />
             </div>
           </div>
