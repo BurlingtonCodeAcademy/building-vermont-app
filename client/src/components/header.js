@@ -40,6 +40,9 @@ class Header extends Component {
     const filteredBuildings = buildings.filter(document =>
       document.name.toLowerCase().includes(query)
     );
+    const filteredYears = buildings.filter(document =>
+      document.year.toString().includes(query)
+    );
     const filteredArchitects = architects.filter(document =>
       document.name.toLowerCase().includes(query)
     );
@@ -51,6 +54,7 @@ class Header extends Component {
     );
     return {
       buildings: filteredBuildings,
+      years: filteredYears,
       architects: filteredArchitects,
       events: filteredEvents,
       posts: filteredPosts,
