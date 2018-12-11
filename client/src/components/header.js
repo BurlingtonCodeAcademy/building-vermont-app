@@ -39,18 +39,10 @@ class Header extends Component {
     const { buildings, architects, events, posts } = this.state.allContent;
     const filteredBuildings = buildings.filter(document =>
       document.name.toLowerCase().includes(query)
-    );
-    const filteredYears = buildings.filter(document =>
-      document.year.toString().includes(query)
-    );
-    const filteredTypes = buildings.filter(document =>
-      document.type.toLowerCase().includes(query)
-    );
-    const filteredStyles = buildings.filter(document =>
-      document.style.toLowerCase().includes(query)
-    );
-    const filteredCities = buildings.filter(document =>
-      document.city.toLowerCase().includes(query)
+      || document.year.toString().includes(query)
+      || document.type.toLowerCase().includes(query)
+      || document.style.toLowerCase().includes(query)
+      || document.city.toLowerCase().includes(query)
     );
     const filteredArchitects = architects.filter(document =>
       document.name.toLowerCase().includes(query)
@@ -61,9 +53,8 @@ class Header extends Component {
     const filteredPosts = posts.filter(document =>
       document.title.toLowerCase().includes(query)
     );
-    let allFilteredBuildings = filteredBuildings.concat(filteredYears, filteredTypes, filteredStyles, filteredCities);
     return {
-      buildings: allFilteredBuildings,
+      buildings: filteredBuildings,
       architects: filteredArchitects,
       events: filteredEvents,
       posts: filteredPosts,
