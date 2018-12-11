@@ -16,6 +16,7 @@ const PostPage = ({ data }) => (
             dangerouslySetInnerHTML={{ __html: marked(document.node.body) }}
           />
           <p>Posted by: {document.node.author}</p>
+          <hr />
         </li>
       ))}
     </ul>
