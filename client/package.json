@@ -20,6 +20,7 @@
     "material-ui-search-bar": "^0.4.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
+    "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0"
   },
