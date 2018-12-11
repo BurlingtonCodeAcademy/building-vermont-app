@@ -177,13 +177,15 @@ exports.createPages = ({ actions, graphql }) => {
     });
   });
 
-  const getEventDates = makeRequest(
+  const getEvents = makeRequest(
     graphql,
     `
     {
       allStrapiEvent {
         edges {
           node {
+            id
+            name
             date
           }
         }
@@ -200,28 +202,15 @@ exports.createPages = ({ actions, graphql }) => {
           date: node.date,
         },
       });
-    });
-  });
-
-  const getEventNames = makeRequest(
-    graphql,
-    `
-    {
-      allStrapiEvent {
-        edges {
-          node {
-            name
-            date
-          }
-        }
-      }
-    }
-    `
-  ).then(result => {
-    // Create pages for each event name.
-    result.data.allStrapiEvent.edges.forEach(({ node }) => {
       createPage({
         path: `/events/${moment(node.date).format('MM-DD-YY')}/${(node.name).split(' ').join('-')}`,
+        component: path.resolve(`src/templates/event.js`),
+        context: {
+          name: node.name,
+        },
+      });
+      createPage({
+        path: `/events/${node.id}`,
         component: path.resolve(`src/templates/event.js`),
         context: {
           name: node.name,
@@ -257,5 +246,5 @@ exports.createPages = ({ actions, graphql }) => {
   });
 
   // Queries for buildings and architects nodes to use in creating pages.
-  return Promise.all([getBuildings, getYears, getCity, getStyle, getType, getPosts, getEventDates, getEventNames, getArchitects]);
+  return Promise.all([getBuildings, getYears, getCity, getStyle, getType, getPosts, getEvents, getArchitects]);
 };

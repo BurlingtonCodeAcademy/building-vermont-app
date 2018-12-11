@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import moment from 'moment';
 import marked from 'marked';
@@ -10,7 +10,7 @@ const PostPage = ({ data }) => (
       {data.allStrapiPost.edges.map(document => (
         <li key={document.node.id}>
           <p>{moment(document.node.date).format('MMMM Do, YYYY')}</p>
-          <h2>{document.node.title}</h2>
+          <h2><Link to={`/posts/${document.node.id}`}>{document.node.title}</Link></h2>
 
           <div
             dangerouslySetInnerHTML={{ __html: marked(document.node.body) }}
