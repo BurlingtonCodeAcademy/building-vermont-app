@@ -65,8 +65,7 @@ class Calendar extends Component {
 
     const events = this.props.events;
 
-    const matchDay = eventDate =>
-      eventDate.date.toString() === day.toISOString();
+    const matchDay = ({ date }) => dateFns.isSameDay(date, day);
 
     while (day <= endDate) {
       for (let i = 0; i < 7; i++) {

@@ -1,16 +1,64 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
+import { Link, navigate } from 'gatsby';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import SearchBar from 'material-ui-search-bar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import FlatButton from 'material-ui/FlatButton'
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 
 
 
-const Header = ({ siteTitle }) => (
-  <div
+class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      query: ``,
+      results: ``,
+      allContent: ``,
+    };
+  }
+  componentDidMount = async () => {
+    const PATH = 'http://localhost:1337';
+    const contentTypes = ['buildings', 'architects', 'events', 'posts'];
+    const [buildings, architects, events, posts] = await Promise.all(
+      contentTypes.map(type =>
+        fetch(`${PATH}/${type}`).then(response => response.json())
+      )
+    );
+    this.setState({
+      allContent: {
+        buildings,
+        architects,
+        events,
+        posts,
+      },
+    });
+  };
+
+  filterResults = query => {
+    const { buildings, architects, events, posts } = this.state.allContent;
+    const filteredBuildings = buildings.filter(document =>
+      document.name.toLowerCase().includes(query)
+    );
+    const filteredArchitects = architects.filter(document =>
+      document.name.toLowerCase().includes(query)
+    );
+    const filteredEvents = events.filter(document =>
+      document.name.toLowerCase().includes(query)
+    );
+    const filteredPosts = posts.filter(document =>
+      document.title.toLowerCase().includes(query)
+    );
+    return {
+      buildings: filteredBuildings,
+      architects: filteredArchitects,
+      events: filteredEvents,
+      posts: filteredPosts,
+    };
+  };
+  render() {
+    return (
+   <div
     style={{
       background: '#222',
     }}
@@ -31,7 +79,7 @@ const Header = ({ siteTitle }) => (
               textDecoration: 'none',
             }}
           >
-            {siteTitle}
+                {this.props.siteTitle}
           </Link>
         </h2>
       </div>
@@ -75,15 +123,25 @@ const Header = ({ siteTitle }) => (
             </div>
             <div style={{paddingLeft: 20,}}>
               <MuiThemeProvider>
-                <SearchBar
-                  onChange={() => console.log('onChange')}
-                  onRequestSearch={() => console.log('onRequestSearch')}
-                  style={{
-                    margin: '0 auto',
-                    minWidth: 380,
-                    maxWidth: 800
-                  }}
-                />
+                    <SearchBar
+                      value={this.state.query}
+                      onChange={input => {
+                        this.setState({
+                          query: input,
+                          results: this.filterResults(input),
+                        });
+                      }}
+                      onRequestSearch={() => {
+                        navigate(`/search`, {
+                          state: { results: this.state.results },
+                        });
+                      }}
+                      style={{
+                        margin: '0 auto',
+                        minWidth: 380,
+                        maxWidth: 800,
+                      }}
+                    />
               </MuiThemeProvider>
             </div>
             <div style={{paddingLeft: 40,}}>
@@ -102,14 +160,16 @@ const Header = ({ siteTitle }) => (
       </div>
     </h3>
   </div>
-)
+   );
+  }
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: '',
-}
+};
 
-export default Header
+export default Header;

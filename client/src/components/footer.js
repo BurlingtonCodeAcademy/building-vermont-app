@@ -1,12 +1,11 @@
 import React from 'react';
-import './footer.css'
-import { domainToASCII } from 'url';
+import './footer.css';
 
 class NameInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ''
+      value: '',
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -17,8 +16,15 @@ class NameInput extends React.Component {
 
   render() {
     return (
-      <input type="text" name="name" placeholder="name" value={this.state.value} onChange={this.handleChange} className="name-input" />
-    )
+      <input
+        type="text"
+        name="name"
+        placeholder="name"
+        value={this.state.value}
+        onChange={this.handleChange}
+        className="name-input"
+      />
+    );
   }
 }
 
@@ -26,7 +32,7 @@ class TextInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ''
+      value: '',
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -37,8 +43,13 @@ class TextInput extends React.Component {
 
   render() {
     return (
-      <textarea value={this.state.value} name="comment" onChange={this.handleChange} className="form-body" />
-    )
+      <textarea
+        value={this.state.value}
+        name="comment"
+        onChange={this.handleChange}
+        className="form-body"
+      />
+    );
   }
 }
 
@@ -46,7 +57,7 @@ class EmailInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ''
+      value: '',
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -57,8 +68,15 @@ class EmailInput extends React.Component {
 
   render() {
     return (
-      <input type="email" name="email" value={this.state.value} placeholder="email" onChange={this.handleChange} className="email-input" />
-    )
+      <input
+        type="email"
+        name="email"
+        value={this.state.value}
+        placeholder="email"
+        onChange={this.handleChange}
+        className="email-input"
+      />
+    );
   }
 }
 
@@ -66,7 +84,7 @@ class Footer extends React.Component {
   constructor(props) {
     super(props);
     //this.handleSubmit = this.handleSubmit.bind(this);
-    this.action = "mailto:example@domain.com"
+    this.action = 'mailto:example@domain.com';
   }
 
   /*
@@ -80,7 +98,12 @@ class Footer extends React.Component {
   render() {
     return (
       <div className="footer">
-        <form encType="text/plain" method="POST" action={this.action} className="contact-form">
+        <form
+          encType="text/plain"
+          method="POST"
+          action={this.action}
+          className="contact-form"
+        >
           <div className="form-row">
             <div className="form-column">
               <NameInput />
@@ -88,14 +111,14 @@ class Footer extends React.Component {
             </div>
             <TextInput />
             <div className="form-column">
-            <div>Questions? Comments?</div>
+              <div>Questions? Comments?</div>
               <input type="submit" value="Submit" className="submit-button" />
             </div>
           </div>
         </form>
       </div>
-    )
+    );
   }
 }
 
-export default Footer
+export default Footer;
