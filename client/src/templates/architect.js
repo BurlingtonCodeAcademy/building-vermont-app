@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
+import marked from 'marked';
+import Img from 'gatsby-image';
 
 const ArchitectTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiArchitect.name}</h1>
-    <p>
-      {data.strapiArchitect.bio}
-    </p>
+    <Img fixed={data.strapiArchitect.image.childImageSharp.fixed} />
+    <p dangerouslySetInnerHTML={{ __html: (marked(data.strapiArchitect.bio))}} />
     <p>
     </p>
     <ul>
@@ -37,6 +38,13 @@ export const query = graphql`
       id
       name
       bio
+      image {
+        childImageSharp {
+          fixed(height: 400) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
       buildings {
             id
             name

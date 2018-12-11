@@ -6,6 +6,8 @@ import { StaticQuery, graphql } from 'gatsby'
 import Header from './header'
 import Footer from './footer'
 import './layout.css'
+import { NavigationFullscreenExit } from 'material-ui/svg-icons';
+import { ActionViewColumn } from 'material-ui/svg-icons';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -36,6 +38,9 @@ const Layout = ({ children }) => (
             maxWidth: 960,
             padding: '0px 1.0875rem 1.45rem',
             paddingTop: 0,
+            display: 'flex',
+            flexFlow: 'column',
+            minHeight: '68vh',
           }}
         >
           {children}

@@ -26,6 +26,9 @@ export const query = graphql`
       filter: {
         city: { eq: $city }
       }
+      sort: {
+        fields: [ name ], order: ASC
+      }
     ) {
       edges {
         node {

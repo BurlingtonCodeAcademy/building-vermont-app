@@ -71,7 +71,7 @@ class Footer extends React.Component {
 
   /*
   handleSubmit(event) {  
-    //mail to action here
+    mailto action here ?
     alert('Form was submitted');
 
     event.preventDefault()

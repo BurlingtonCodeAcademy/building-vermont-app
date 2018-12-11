@@ -34,7 +34,11 @@ export default EventPage;
 
 export const pageQuery = graphql`
   query EventQuery {
-    allStrapiEvent {
+    allStrapiEvent(
+      sort: {
+        fields: [ date ], order: ASC
+      }
+    ) {
       edges {
         node {
           id

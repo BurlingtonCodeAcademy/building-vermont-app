@@ -24,6 +24,12 @@
     "body": {
       "default": "",
       "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
     }
   }
 }

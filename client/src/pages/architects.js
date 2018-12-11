@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
-import moment from 'moment';
 
 const ArchitectPage = ({ data }) => (
   <Layout>
@@ -9,12 +8,11 @@ const ArchitectPage = ({ data }) => (
     <ul>
       {data.allStrapiArchitect.edges.map(document => (
         <li key={document.node.id}>
-          <h2>
+          <h3>
             <Link to={`architects/${document.node.id}`}>
               {document.node.name}
             </Link>
-          </h2>
-          <div dangerouslySetInnerHTML={{ __html: (document.node.bio)}} />
+          </h3>
         </li>
       ))}
     </ul>
@@ -25,7 +23,11 @@ export default ArchitectPage;
 
 export const pageQuery = graphql`
   query ArchitectQuery {
-    allStrapiArchitect {
+    allStrapiArchitect(
+      sort: {
+        fields: [ name ], order: ASC
+      }
+    ) {
       edges {
         node {
           id
