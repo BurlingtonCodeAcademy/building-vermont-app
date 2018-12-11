@@ -12,17 +12,17 @@ const PostPage = ({ data }) => (
         <li key={document.node.id}>
           <p>{moment(document.node.date).format('MMMM Do, YYYY')}</p>
           <h2><Link to={`/posts/${document.node.id}`}>{document.node.title}</Link></h2>
-
           <div
             dangerouslySetInnerHTML={{ __html: marked(document.node.body) }}
           />
-          <p>Posted by: {document.node.author}</p>
-          <Comments />
+          <p>Posted by: {document.node.author}</p>          
           <hr />
         </li>
       ))}
     </ul>
+    <Comments />
   </Layout>
+  
 );
 
 export default PostPage;
