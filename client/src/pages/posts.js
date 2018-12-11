@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import moment from 'moment';
 import marked from 'marked';
@@ -9,14 +9,13 @@ const PostPage = ({ data }) => (
     <ul>
       {data.allStrapiPost.edges.map(document => (
         <li key={document.node.id}>
-          <p>{moment(document.node.date).format("MMMM Do, YYYY")}</p>
-          <h2>
-            {document.node.title}
-          </h2>
+          <p>{moment(document.node.date).format('MMMM Do, YYYY')}</p>
+          <h2>{document.node.title}</h2>
 
-            <div dangerouslySetInnerHTML={{ __html: (marked(document.node.body))}} />          
-          <p>Posted by: {document.node.author}
-          </p>
+          <div
+            dangerouslySetInnerHTML={{ __html: marked(document.node.body) }}
+          />
+          <p>Posted by: {document.node.author}</p>
         </li>
       ))}
     </ul>
@@ -27,11 +26,7 @@ export default PostPage;
 
 export const pageQuery = graphql`
   query PostQuery {
-    allStrapiPost(
-      sort: {
-        fields: [ date ], order: DESC
-      }
-    ) {
+    allStrapiPost(sort: { fields: [date], order: DESC }) {
       edges {
         node {
           id

@@ -1,7 +1,6 @@
-import { Link, navigate } from 'gatsby'
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-import DropDownMenu from 'material-ui'
+import { Link, navigate } from 'gatsby';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import SearchBar from 'material-ui-search-bar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 

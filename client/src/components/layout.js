@@ -1,13 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
 
-import Header from './header'
-import Footer from './footer'
-import './layout.css'
-import { NavigationFullscreenExit } from 'material-ui/svg-icons';
-import { ActionViewColumn } from 'material-ui/svg-icons';
+import Header from './header';
+import Footer from './footer';
+import './layout.css';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -49,10 +47,10 @@ const Layout = ({ children }) => (
       </>
     )}
   />
-)
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
