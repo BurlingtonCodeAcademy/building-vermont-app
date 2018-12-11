@@ -151,6 +151,32 @@ exports.createPages = ({ actions, graphql }) => {
     });
   });
 
+  const getPosts = makeRequest(
+    graphql,
+    `
+    {
+      allStrapiPost {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+    }
+    `
+  ).then(result => {
+    // Create pages for each post.
+    result.data.allStrapiPost.edges.forEach(({ node }) => {
+      createPage({
+        path: `/posts/${node.id}`,
+        component: path.resolve(`src/templates/post.js`),
+        context: {
+          id: node.id,
+        },
+      });
+    });
+  });
+
   const getEventDates = makeRequest(
     graphql,
     `
@@ -231,5 +257,5 @@ exports.createPages = ({ actions, graphql }) => {
   });
 
   // Queries for buildings and architects nodes to use in creating pages.
-  return Promise.all([getBuildings, getYears, getCity, getStyle, getType, getEventDates, getEventNames, getArchitects]);
+  return Promise.all([getBuildings, getYears, getCity, getStyle, getType, getPosts, getEventDates, getEventNames, getArchitects]);
 };
