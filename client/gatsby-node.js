@@ -29,6 +29,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             id
+            name
           }
         }
       }
@@ -39,6 +40,13 @@ exports.createPages = ({ actions, graphql }) => {
     result.data.allStrapiBuilding.edges.forEach(({ node }) => {
       createPage({
         path: `/buildings/${node.id}`,
+        component: path.resolve(`src/templates/building.js`),
+        context: {
+          id: node.id,
+        },
+      });
+      createPage({
+        path: `/buildings/${(node.name).split(' ').join('-')}`,
         component: path.resolve(`src/templates/building.js`),
         context: {
           id: node.id,
@@ -227,6 +235,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             id
+            name
           }
         }
       }
@@ -237,6 +246,13 @@ exports.createPages = ({ actions, graphql }) => {
     result.data.allStrapiArchitect.edges.forEach(({ node }) => {
       createPage({
         path: `/architects/${node.id}`,
+        component: path.resolve(`src/templates/architect.js`),
+        context: {
+          id: node.id,
+        },
+      });
+      createPage({
+        path: `/architects/${(node.name).split(' ').join('-')}`,
         component: path.resolve(`src/templates/architect.js`),
         context: {
           id: node.id,
