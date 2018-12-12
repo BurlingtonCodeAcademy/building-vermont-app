@@ -9,7 +9,7 @@ const ArchitectPage = ({ data }) => (
       {data.allStrapiArchitect.edges.map(document => (
         <li key={document.node.id}>
           <h3>
-            <Link to={`architects/${document.node.id}`}>
+            <Link to={`architects/${(document.node.name).split(' ').join('-')}`}>
               {document.node.name}
             </Link>
           </h3>

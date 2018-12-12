@@ -6,7 +6,7 @@ import marked from 'marked';
 const BuildingTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiBuilding.name}</h1>
-    <h3> by <Link to={`/architects/${data.strapiBuilding.architect.id}`}>{data.strapiBuilding.architect.name}</Link></h3>
+    <h3> by <Link to={`/architects/${(data.strapiBuilding.architect.name).split(' ').join('-')}`}>{data.strapiBuilding.architect.name}</Link></h3>
     <p dangerouslySetInnerHTML={{ __html: (marked(data.strapiBuilding.description))}} />
 
     <p>
