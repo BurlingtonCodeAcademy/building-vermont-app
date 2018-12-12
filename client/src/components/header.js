@@ -111,8 +111,8 @@ class Header extends Component {
                 <div style={{ padding: 0, }}>
                   <MuiThemeProvider>
                     <DropDownMenu underlineStyle={{ borderTop: '0px' }}>
-                      <MenuItem><a href="/architects">Architects</a></MenuItem>
-                      <MenuItem><a href="/buildings">Buildings</a></MenuItem>
+                      <MenuItem><a href="/architects"><h4 style={{margin: 0}}>Architects</h4></a></MenuItem>
+                      <MenuItem><a href="/buildings"><h4 style={{margin: 0}}>Buildings</h4></a></MenuItem>
                     </DropDownMenu>
                   </MuiThemeProvider>
                 </div>
@@ -120,8 +120,8 @@ class Header extends Component {
                 <div style={{ padding: 0, alignSelf: 'center' }}>
                   <MuiThemeProvider>
                     <DropDownMenu underlineStyle={{ borderTop: '0px' }}>
-                      <MenuItem><a href="/posts">Blog</a></MenuItem>
-                      <MenuItem><a href="/events">Events</a></MenuItem>
+                      <MenuItem><a href="/posts"><h4 style={{margin: 0}}>Blog</h4></a></MenuItem>
+                      <MenuItem><a href="/events"><h4 style={{margin: 0}}>Events</h4></a></MenuItem>
                     </DropDownMenu>
                   </MuiThemeProvider>
                 </div>
