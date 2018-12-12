@@ -39,6 +39,8 @@ export class Contact extends Component {
       <div className="contact">
         <MuiThemeProvider>
           <form onSubmit={this.handleSubmit}>
+          <div style={{color: '#ddd', paddingRight: '0.4em', minWidth: '11em'}}>Comments/Questions?</div>
+          <div style={{paddingRight: '0.8em'}}>
             <TextField
               type="text"
               name="email"
@@ -46,6 +48,8 @@ export class Contact extends Component {
               value={this.state.email}
               onChange={this.handleChange}
             />
+            </div>
+          <div style={{paddingRight: '0.6em'}}>
             <TextField
               type="text"
               name="subject"
@@ -53,6 +57,8 @@ export class Contact extends Component {
               value={this.state.subject}
               onChange={this.handleChange}
             />
+            </div>
+          <div style={{paddingRight: '0.6em'}}>
             <TextField
               name="body"
               placeholder="Your Message"
@@ -60,6 +66,7 @@ export class Contact extends Component {
               value={this.state.body}
               onChange={this.handleChange}
             />
+            </div>
             <input
               type="submit"
               value="Send"
