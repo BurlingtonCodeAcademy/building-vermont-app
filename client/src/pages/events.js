@@ -12,7 +12,7 @@ const EventPage = ({ data }) => (
       className="App"
       events={data.allStrapiEvent.edges.map(document => document.node)}
     />
-    <ul>
+    {/* <ul>
       {data.allStrapiEvent.edges.map(document => (
         <li key={document.node.name.split(' ').join('-')}>
           <p>
@@ -26,7 +26,7 @@ const EventPage = ({ data }) => (
           </p>
         </li>
       ))}
-    </ul>
+    </ul> */}
   </Layout>
 );
 

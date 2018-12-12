@@ -1,6 +1,20 @@
+.container-image {
+  min-height: 100vh;
+  background-image: url(../images/148_Spear_g.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: grid;
+  grid-template-columns: 25%, 25%, 25%, 25%;
+  grid-template-rows: 20%, 20%, 20%, 20%, 20%;
+}
+
+.container-image a, .container-image h1, .container-image h3 {
+  text-decoration: none;
+  color: white;
+}
+
 .index-row, .index-column {
   display: flex;
-  /* border: 1px solid black; */
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -16,9 +30,13 @@
   justify-content: center;
 }
 
+h1 {
+  color: rgb(107, 107, 107);
+}
+
 a {
   text-decoration: none;
-  color: red;
+  color: rgb(0, 139, 0);
 }
 
 .index-column {
@@ -26,20 +44,19 @@ a {
 }
 
 a:hover {
-  color: blue;
+  color: rgb(57, 206, 131);
 }
 
 .box {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
   height: auto;
   width: auto;
   min-width: 14.5em;
   min-height: 14.5em;
-  border-radius: 3px;
   margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.199);
 }
 
 .box a {

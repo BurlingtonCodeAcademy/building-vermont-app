@@ -151,13 +151,41 @@ exports.createPages = ({ actions, graphql }) => {
     });
   });
 
-  const getEventDates = makeRequest(
+  const getPosts = makeRequest(
+    graphql,
+    `
+    {
+      allStrapiPost {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+    }
+    `
+  ).then(result => {
+    // Create pages for each post.
+    result.data.allStrapiPost.edges.forEach(({ node }) => {
+      createPage({
+        path: `/posts/${node.id}`,
+        component: path.resolve(`src/templates/post.js`),
+        context: {
+          id: node.id,
+        },
+      });
+    });
+  });
+
+  const getEvents = makeRequest(
     graphql,
     `
     {
       allStrapiEvent {
         edges {
           node {
+            id
+            name
             date
           }
         }
@@ -174,28 +202,15 @@ exports.createPages = ({ actions, graphql }) => {
           date: node.date,
         },
       });
-    });
-  });
-
-  const getEventNames = makeRequest(
-    graphql,
-    `
-    {
-      allStrapiEvent {
-        edges {
-          node {
-            name
-            date
-          }
-        }
-      }
-    }
-    `
-  ).then(result => {
-    // Create pages for each event name.
-    result.data.allStrapiEvent.edges.forEach(({ node }) => {
       createPage({
         path: `/events/${moment(node.date).format('MM-DD-YY')}/${(node.name).split(' ').join('-')}`,
+        component: path.resolve(`src/templates/event.js`),
+        context: {
+          name: node.name,
+        },
+      });
+      createPage({
+        path: `/events/${node.id}`,
         component: path.resolve(`src/templates/event.js`),
         context: {
           name: node.name,
@@ -231,5 +246,5 @@ exports.createPages = ({ actions, graphql }) => {
   });
 
   // Queries for buildings and architects nodes to use in creating pages.
-  return Promise.all([getBuildings, getYears, getCity, getStyle, getType, getEventDates, getEventNames, getArchitects]);
+  return Promise.all([getBuildings, getYears, getCity, getStyle, getType, getPosts, getEvents, getArchitects]);
 };

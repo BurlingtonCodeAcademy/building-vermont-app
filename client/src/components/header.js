@@ -39,9 +39,10 @@ class Header extends Component {
     const { buildings, architects, events, posts } = this.state.allContent;
     const filteredBuildings = buildings.filter(document =>
       document.name.toLowerCase().includes(query)
-    );
-    const filteredYears = buildings.filter(document =>
-      document.year.toString().includes(query)
+      || document.year.toString().includes(query)
+      || document.type.toLowerCase().includes(query)
+      || document.style.toLowerCase().includes(query)
+      || document.city.toLowerCase().includes(query)
     );
     const filteredArchitects = architects.filter(document =>
       document.name.toLowerCase().includes(query)
@@ -54,7 +55,6 @@ class Header extends Component {
     );
     return {
       buildings: filteredBuildings,
-      years: filteredYears,
       architects: filteredArchitects,
       events: filteredEvents,
       posts: filteredPosts,
@@ -62,71 +62,71 @@ class Header extends Component {
   };
   render() {
     return (
-   <div
-    style={{
-      background: '#222',
-    }}
-  >
-    <div>
       <div
         style={{
-          margin: '0 auto',
-          maxWidth: 960,
-          padding: '.6rem 1.0875rem',
+          background: '#222',
         }}
       >
-        <h2 style={{ margin: 0 }}>
-          <Link
-            to="/"
+        <div>
+          <div
             style={{
-              color: 'white',
-              textDecoration: 'none',
+              margin: '0 auto',
+              maxWidth: 960,
+              padding: '.6rem 1.0875rem',
             }}
           >
+            <h2 style={{ margin: 0 }}>
+              <Link
+                to="/"
+                style={{
+                  color: 'white',
+                  textDecoration: 'none',
+                }}
+              >
                 {this.props.siteTitle}
-          </Link>
-        </h2>
-      </div>
-    </div>
-    <h3>
-      <div
-        style={{
-          background: '#555',
-          marginBottom: '1.45rem',
-        }}
-      >
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0 auto',
-          }}
-        >
-          <div style={{
-            margin: 0,
-            display: 'flex',
-            alignItems: 'center',
-          }}>
-                <div style={{color: '#fff', borderBottom: '0px solid white', alignSelf: 'center', paddingLeft: 20}}>Yesterday</div>
-            <div style={{padding: 0,}}>
-              <MuiThemeProvider>
-                <DropDownMenu underlineStyle={{borderTop: '0px'}}>
-                <MenuItem><a href="/architects">Architects</a></MenuItem>
-                <MenuItem><a href="/buildings">Buildings</a></MenuItem>
-                </DropDownMenu>
-              </MuiThemeProvider>
-            </div>
-            <div style={{color: '#fff',}}>Today</div>
-            <div style={{padding: 0, alignSelf: 'center'}}>
-            <MuiThemeProvider>
-            <DropDownMenu underlineStyle={{borderTop: '0px'}}>
-                <MenuItem><a href="/posts">Blog</a></MenuItem>
-                <MenuItem><a href="/events">Events</a></MenuItem>
-                </DropDownMenu>
-              </MuiThemeProvider>
-            </div>
-            <div style={{paddingLeft: 20,}}>
-              <MuiThemeProvider>
+              </Link>
+            </h2>
+          </div>
+        </div>
+        <h3>
+          <div
+            style={{
+              background: '#555',
+              marginBottom: '1.45rem',
+            }}
+          >
+            <div
+              style={{
+                margin: '0 auto',
+                maxWidth: 960,
+                padding: '0 auto',
+              }}
+            >
+              <div style={{
+                margin: 0,
+                display: 'flex',
+                alignItems: 'center',
+              }}>
+                <div style={{ color: '#fff', borderBottom: '0px solid white', alignSelf: 'center', paddingLeft: 20 }}>Yesterday</div>
+                <div style={{ padding: 0, }}>
+                  <MuiThemeProvider>
+                    <DropDownMenu underlineStyle={{ borderTop: '0px' }}>
+                      <MenuItem><a href="/architects">Architects</a></MenuItem>
+                      <MenuItem><a href="/buildings">Buildings</a></MenuItem>
+                    </DropDownMenu>
+                  </MuiThemeProvider>
+                </div>
+                <div style={{ color: '#fff', }}>Today</div>
+                <div style={{ padding: 0, alignSelf: 'center' }}>
+                  <MuiThemeProvider>
+                    <DropDownMenu underlineStyle={{ borderTop: '0px' }}>
+                      <MenuItem><a href="/posts">Blog</a></MenuItem>
+                      <MenuItem><a href="/events">Events</a></MenuItem>
+                    </DropDownMenu>
+                  </MuiThemeProvider>
+                </div>
+                <div style={{ paddingLeft: 20, }}>
+                  <MuiThemeProvider>
                     <SearchBar
                       value={this.state.query}
                       onChange={input => {
@@ -146,25 +146,25 @@ class Header extends Component {
                         maxWidth: 800,
                       }}
                     />
-              </MuiThemeProvider>
-            </div>
-            <div style={{paddingLeft: 40,}}>
-              <Link
-                to="/about"
-                style={{
-                  color: 'white',
-                  textDecoration: 'none',
-                }}
-              >
-                About
+                  </MuiThemeProvider>
+                </div>
+                <div style={{ paddingLeft: 40, }}>
+                  <Link
+                    to="/about"
+                    style={{
+                      color: 'white',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    About
         </Link>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </h3>
       </div>
-    </h3>
-  </div>
-   );
+    );
   }
 }
 
