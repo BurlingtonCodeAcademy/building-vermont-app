@@ -121,7 +121,7 @@ class Header extends Component {
                   <MuiThemeProvider>
                     <DropDownMenu underlineStyle={{ borderTop: '0px' }}>
                       <MenuItem><a href="/posts"><h4 style={{margin: 0}}>Blog</h4></a></MenuItem>
-                      <MenuItem><a href="/events"><h4 style={{margin: 0}}>Events</h4></a></MenuItem>
+                      <MenuItem><a href="/events"><h4 style={{margin: 0}}>Calendar</h4></a></MenuItem>
                     </DropDownMenu>
                   </MuiThemeProvider>
                 </div>
