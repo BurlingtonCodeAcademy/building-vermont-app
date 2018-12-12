@@ -6,20 +6,28 @@ import './contact.css';
 export class Contact extends Component {
   constructor() {
     super();
-    this.state = {
-      subject: '',
-      email: '',
-      body: '',
-    };
+    this.state = { subject: '', email: '', body: '', status: '' };
   }
+  componentDidUpdate() {
+    clearTimeout(this.timeoutId);
+    this.timeoutId = setTimeout(
+      () =>
+        this.setState({
+          status: '',
+        }),
+      3000
+    );
+  }
+
   handleChange = event =>
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
 
   handleSubmit = event => {
     event.preventDefault();
     const PATH = 'http://localhost:1337';
     const { subject, email, body } = this.state;
-    this.setState({ subject: '', email: '', body: '' });
     fetch(`${PATH}/email`, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, cors, *same-origin
@@ -32,13 +40,23 @@ export class Contact extends Component {
       redirect: 'follow', // manual, *follow, error
       referrer: 'no-referrer', // no-referrer, *client
       body: JSON.stringify({ email, subject, body }), // body data type must match "Content-Type" header
-    }).then(response => response.json()); // parses response to JSON
+    })
+      .then(() =>
+        this.setState({
+          subject: '',
+          email: '',
+          body: '',
+          status: 'Email sent!',
+        })
+      )
+      .catch(() => this.setState({ status: 'Email failed to send...' })); // parses response to JSON
   };
   render() {
     return (
       <div className="contact">
         <MuiThemeProvider>
           <form onSubmit={this.handleSubmit}>
+            <span>{this.state.status}</span>
             <TextField
               type="text"
               name="email"
