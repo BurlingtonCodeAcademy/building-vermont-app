@@ -5,12 +5,12 @@
       "connector": "strapi-hook-mongoose",
       "settings": {
         "client": "mongo",
-        "uri": "${process.env.PROD_DATABASE_URI || ''}",
-        "host": "${process.env.PROD_DATABASE_HOST || '127.0.0.1'}",
-        "port": "${process.env.PROD_DATABASE_PORT || 27017}",
-        "database": "${process.env.PROD_DATABASE_NAME || 'building-vermont'}",
-        "username": "${process.env.PROD_DATABASE_USERNAME || ''}",
-        "password": "${process.env.PROD_DATABASE_PASSWORD || ''}"
+        "uri": "${process.env.DATABASE_URI || ''}",
+        "host": "${process.env.DATABASE_HOST || '127.0.0.1'}",
+        "port": "${process.env.DATABASE_PORT || 27017}",
+        "database": "${process.env.DATABASE_NAME || 'building-vermont'}",
+        "username": "${process.env.DATABASE_USERNAME || ''}",
+        "password": "${process.env.DATABASE_PASSWORD || ''}"
       },
       "options": {
         "ssl": "${process.env.DATABASE_SSL || false}",

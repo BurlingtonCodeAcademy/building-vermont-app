@@ -5,7 +5,7 @@
       "path": "/",
       "handler": "Email.send",
       "config": {
-        "policies": []
+        "policies": ["cors"]
       }
     },
     {

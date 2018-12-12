@@ -7,8 +7,11 @@
  *
  * This is handy in situations where the Strapi CLI is not relevant or useful.
  */
-
-const result = require('dotenv').config({path: '../.env'});
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Loading the configuration from .env file...')
+  const result = require('dotenv').config({path: '../.env'});
+  console.log({result});
+}
 
 process.chdir(__dirname);
 
