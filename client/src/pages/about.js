@@ -4,10 +4,7 @@ import Layout from '../components/layout';
 const AboutPage = () => (
   <Layout>
     <div>
-      <div>
-        <h3>About</h3>
-      </div>
-      <div>
+      <p>
         Vermont Modern is dedicated to the identification, documentation and
         preservation of modernist architecture throughout Vermont. I began
         researching Vermont's modernist architecture in 2004, as a graduate
@@ -19,10 +16,13 @@ const AboutPage = () => (
         information I have collected over the years available to students,
         researchers and the general public. Ideally, this information will raise
         awareness of Vermont's modernist architectural resources and help
-        preserve these buildings for future generations to appreciate. Thanks
-        for your interest, and please feel free to contact me with any comments
-        or questions! Devin A. Colman Burlington, VT
-      </div>
+        preserve these buildings for future generations to appreciate.
+      </p>
+      <p>
+        Thanks for your interest, and please feel free to contact me with any
+        comments or questions!
+      </p>
+      <p>Devin A. Colman Burlington, VT</p>
     </div>
   </Layout>
 );
