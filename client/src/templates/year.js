@@ -9,7 +9,7 @@ const YearTemplate = ({ data }) => (
       {data.allStrapiBuilding.edges.map(document => (
         <li key={document.node.id}>
           <h2>
-            <Link to={`/buildings/${document.node.id}`}>{document.node.name}</Link>
+            <Link to={`/buildings/${(document.node.name).split(' ').join('-')}`}>{document.node.name}</Link>
           </h2>
           <p>A {document.node.style} {document.node.type} in {document.node.city}</p>
         </li>
