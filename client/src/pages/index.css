@@ -62,3 +62,21 @@ a:hover {
 .box a {
   align-self: center;
 } 
+
+ul h3, ul h2, ul h4 {
+  margin-bottom: 0.2em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+figure {
+  float: left;
+  clear: none;
+  margin: 0em 2em 0em 0em;
+}
+
+.floating p {
+  height: auto;
+}
