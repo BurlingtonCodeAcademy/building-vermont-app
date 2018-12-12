@@ -49,7 +49,7 @@ export class Contact extends Component {
               onChange={this.handleChange}
             />
             </div>
-          <div style={{paddingRight: '0.6em'}}>
+          <div style={{paddingRight: '0.8em'}}>
             <TextField
               type="text"
               name="subject"
@@ -58,7 +58,7 @@ export class Contact extends Component {
               onChange={this.handleChange}
             />
             </div>
-          <div style={{paddingRight: '0.6em'}}>
+          <div style={{paddingRight: '0.8em'}}>
             <TextField
               name="body"
               placeholder="Your Message"
