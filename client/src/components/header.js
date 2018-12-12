@@ -91,7 +91,7 @@ class Header extends Component {
         <h3>
           <div
             style={{
-              background: '#555',
+              background: '#494c58',
               marginBottom: '1.45rem',
             }}
           >
