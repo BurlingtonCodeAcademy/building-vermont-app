@@ -31,12 +31,12 @@
 }
 
 h1 {
-  color: rgb(107, 107, 107);
+  color: rgb(48, 85, 94);
 }
 
 a {
   text-decoration: none;
-  color: rgb(0, 139, 0);
+  color: rgb(8, 139, 172);
 }
 
 .index-column {
@@ -44,7 +44,7 @@ a {
 }
 
 a:hover {
-  color: rgb(57, 206, 131);
+  color: rgb(109, 185, 204);
 }
 
 .box {
@@ -62,3 +62,21 @@ a:hover {
 .box a {
   align-self: center;
 } 
+
+ul h3, ul h2, ul h4 {
+  margin-bottom: 0.2em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+figure {
+  float: left;
+  clear: none;
+  margin: 0em 2em 0em 0em;
+}
+
+.floating p {
+  height: auto;
+}

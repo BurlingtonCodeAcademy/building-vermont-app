@@ -54,30 +54,41 @@ export class Contact extends Component {
   render() {
     return (
       <div className="contact">
+        <span>{this.state.status}</span>
         <MuiThemeProvider>
           <form onSubmit={this.handleSubmit}>
-            <span>{this.state.status}</span>
-            <TextField
-              type="text"
-              name="email"
-              placeholder="Email Address"
-              value={this.state.email}
-              onChange={this.handleChange}
-            />
-            <TextField
-              type="text"
-              name="subject"
-              placeholder="Subject"
-              value={this.state.subject}
-              onChange={this.handleChange}
-            />
-            <TextField
-              name="body"
-              placeholder="Your Message"
-              multiLine={true}
-              value={this.state.body}
-              onChange={this.handleChange}
-            />
+            <div
+              style={{ color: '#ddd', paddingRight: '0.4em', minWidth: '11em' }}
+            >
+              Comments/Questions?
+            </div>
+            <div style={{ paddingRight: '0.8em' }}>
+              <TextField
+                type="text"
+                name="email"
+                placeholder="Email Address"
+                value={this.state.email}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div style={{ paddingRight: '0.8em' }}>
+              <TextField
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                value={this.state.subject}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div style={{ paddingRight: '0.8em' }}>
+              <TextField
+                name="body"
+                placeholder="Your Message"
+                multiLine={true}
+                value={this.state.body}
+                onChange={this.handleChange}
+              />
+            </div>
             <input
               type="submit"
               value="Send"

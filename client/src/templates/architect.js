@@ -7,25 +7,24 @@ import Img from 'gatsby-image';
 const ArchitectTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiArchitect.name}</h1>
-    <Img fixed={data.strapiArchitect.image.childImageSharp.fixed} />
-    <p dangerouslySetInnerHTML={{ __html: (marked(data.strapiArchitect.bio))}} />
-    <p>
-    </p>
+    <div className="floating">
+      {/* <div className=".index-column"> */}
+      <figure>
+        <Img fixed={data.strapiArchitect.image.childImageSharp.fixed} />
+      </figure>
+      {/* </div> */}
+      <p dangerouslySetInnerHTML={{ __html: (marked(data.strapiArchitect.bio)) }} />
+    </div>
+    <h3>&nbsp;Designed by {data.strapiArchitect.name}:</h3>
     <ul>
-    {data.strapiArchitect.buildings.map(document => (
+      {data.strapiArchitect.buildings.map(document => (
         <li key={document.id}>
-          <h2>
+          <h3>
             <Link to={`/buildings/${document.id}`}>{document.name}</Link>
-          </h2>
-          <p>A {document.style} {document.type} built in {document.year}</p>
+          </h3>
+          <div>A {document.style} {document.type} built in {document.year}</div>
         </li>
       ))}
-      {/* {data.strapiArchitect.architects.map(architect => (
-        <li key={article.id}>
-          <h2>{architect.name}</h2>
-          <p>{article.content}</p>
-        </li>
-      ))} */}
     </ul>
   </Layout>
 );
