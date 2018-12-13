@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import marked from 'marked';
 import Img from 'gatsby-image';
+import '../pages/index.css'
 
 const ArchitectTemplate = ({ data }) => (
   <Layout>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import Layout from '../components/layout';
+import './index.css'
 
 export class Search extends Component {
   renderResults = () => {

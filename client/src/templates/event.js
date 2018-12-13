@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import moment from 'moment';
+import '../pages/index.css'
 
 const EventTemplate = ({ data }) => (
   <Layout>

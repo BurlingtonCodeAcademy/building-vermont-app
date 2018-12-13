@@ -4,6 +4,7 @@ import Layout from '../components/layout';
 import moment from 'moment';
 import marked from 'marked';
 import Disqus from 'disqus-react'
+import '../pages/index.css'
 
 
 const PostTemplate = ({ data }) => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
+import './index.css'
 
 const BuildingPage = ({ data }) => (
   <Layout>

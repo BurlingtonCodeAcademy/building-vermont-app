@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import marked from 'marked';
+import '../pages/index.css'
 
 function showImageIfAvailable(image) {
   console.log(image);

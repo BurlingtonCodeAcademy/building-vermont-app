@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
+import './index.css'
 
 function uniqueTown(arr) {
   if (arr.length === 0) return arr;

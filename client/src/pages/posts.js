@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import moment from 'moment';
 import marked from 'marked';
+import './index.css'
 
 const PostPage = ({ data }) => (
   <Layout>

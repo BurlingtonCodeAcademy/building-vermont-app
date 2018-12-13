@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
+import '../pages/index.css'
 
 function pluralize(myType) {
   let wordWithoutLastLetter = (myType).slice(0, -1);

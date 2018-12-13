@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Calendar from '../components/calendar';
 import '../components/calendar.css';
-import moment from 'moment';
+import './index.css'
 
 const EventPage = ({ data }) => (
   <Layout>

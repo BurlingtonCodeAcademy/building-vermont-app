@@ -5,7 +5,10 @@ import SearchBar from 'material-ui-search-bar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
-
+import './calendar.css'
+import './footer.css'
+import './layout.css'
+import '../pages/index.css'
 
 
 class Header extends Component {
@@ -107,8 +110,8 @@ class Header extends Component {
                 display: 'flex',
                 alignItems: 'center',
               }}>
-                <div style={{ color: '#fff', borderBottom: '0px solid white', alignSelf: 'center', paddingLeft: 20 }}><a href="/architects"><h3 style={{margin: 0, color: '#fff'}}>Architects</h3></a></div>
-                <div style={{ color: '#fff', borderBottom: '0px solid white', alignSelf: 'center', paddingLeft: 40 }}><a href="/buildings"><h3 style={{margin: 0, color: '#fff'}}>Buildings</h3></a></div>
+                <div style={{ color: '#fff', alignSelf: 'center', paddingLeft: 20 }}><a href="/architects"><h3 style={{margin: 0, color: '#fff'}}>Architects</h3></a></div>
+                <div style={{ color: '#fff', alignSelf: 'center', paddingLeft: 40, paddingRight: 0 }}><a href="/buildings"><h3 style={{margin: 0, color: '#fff'}}>Buildings</h3></a></div>
                 <div style={{ padding: 0, }}>
                   <MuiThemeProvider>
                     <DropDownMenu underlineStyle={{ borderTop: '0px' }}>
@@ -119,9 +122,9 @@ class Header extends Component {
                     </DropDownMenu>
                   </MuiThemeProvider>
                 </div>
-                <div style={{ color: '#fff', borderBottom: '0px solid white', alignSelf: 'center', paddingLeft: 20 }}><a href="/posts"><h3 style={{margin: 0, color: '#fff'}}>Blog</h3></a></div>
-                <div style={{ color: '#fff', borderBottom: '0px solid white', alignSelf: 'center', paddingLeft: 40 }}><a href="/events"><h3 style={{margin: 0, color: '#fff'}}>Events</h3></a></div>
-                <div style={{ paddingLeft: 20, }}>
+                <div style={{ color: '#fff', alignSelf: 'center', paddingLeft: 12 }}><a href="/posts"><h3 style={{margin: 0, color: '#fff'}}>Blog</h3></a></div>
+                <div style={{ color: '#fff', alignSelf: 'center', paddingLeft: 40 }}><a href="/events"><h3 style={{margin: 0, color: '#fff'}}>Events</h3></a></div>
+                <div style={{ paddingLeft: 30, }}>
                   <MuiThemeProvider>
                     <SearchBar
                       value={this.state.query}
