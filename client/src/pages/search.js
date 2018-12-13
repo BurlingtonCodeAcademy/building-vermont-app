@@ -4,7 +4,11 @@ import Layout from '../components/layout';
 
 export class Search extends Component {
   renderResults = () => {
-    const { results } = this.props.location.state;
+    const results =
+      (this.props.location &&
+        this.props.location.state &&
+        this.props.location.state.results) ||
+      '';
     return (
       results &&
       Object.keys(results).map(
