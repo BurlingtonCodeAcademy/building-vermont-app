@@ -10,7 +10,7 @@ const ArchitectPage = ({ data }) => (
         <li key={document.node.id}>
           <h3>
             <Link to={`architects/${(document.node.name).split(' ').join('-')}`}>
-              {document.node.name}
+              {document.node.lastName}, {document.node.firstName}
             </Link>
           </h3>
         </li>
@@ -25,13 +25,15 @@ export const pageQuery = graphql`
   query ArchitectQuery {
     allStrapiArchitect(
       sort: {
-        fields: [ name ], order: ASC
+        fields: [ lastName ], order: ASC
       }
     ) {
       edges {
         node {
           id
           name
+          lastName
+          firstName
           bio
         }
       }
