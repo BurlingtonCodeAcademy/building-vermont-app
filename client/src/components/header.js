@@ -107,24 +107,20 @@ class Header extends Component {
                 display: 'flex',
                 alignItems: 'center',
               }}>
-                <div style={{ color: '#fff', borderBottom: '0px solid white', alignSelf: 'center', paddingLeft: 20 }}>Yesterday</div>
+                <div style={{ color: '#fff', borderBottom: '0px solid white', alignSelf: 'center', paddingLeft: 20 }}><a href="/architects"><h3 style={{margin: 0, color: '#fff'}}>Architects</h3></a></div>
+                <div style={{ color: '#fff', borderBottom: '0px solid white', alignSelf: 'center', paddingLeft: 40 }}><a href="/buildings"><h3 style={{margin: 0, color: '#fff'}}>Buildings</h3></a></div>
                 <div style={{ padding: 0, }}>
                   <MuiThemeProvider>
                     <DropDownMenu underlineStyle={{ borderTop: '0px' }}>
-                      <MenuItem><a href="/architects"><h4 style={{margin: 0}}>Architects</h4></a></MenuItem>
-                      <MenuItem><a href="/buildings"><h4 style={{margin: 0}}>Buildings</h4></a></MenuItem>
+                    <MenuItem><a href="/towns"><h4 style={{margin: 0}}>By Town</h4></a></MenuItem>
+                    <MenuItem><a href="/years"><h4 style={{margin: 0}}>By Year</h4></a></MenuItem>
+                    <MenuItem><a href="/styles"><h4 style={{margin: 0}}>By Style</h4></a></MenuItem>
+                    <MenuItem><a href="/types"><h4 style={{margin: 0}}>By Type</h4></a></MenuItem>
                     </DropDownMenu>
                   </MuiThemeProvider>
                 </div>
-                <div style={{ color: '#fff', }}>Today</div>
-                <div style={{ padding: 0, alignSelf: 'center' }}>
-                  <MuiThemeProvider>
-                    <DropDownMenu underlineStyle={{ borderTop: '0px' }}>
-                      <MenuItem><a href="/posts"><h4 style={{margin: 0}}>Blog</h4></a></MenuItem>
-                      <MenuItem><a href="/events"><h4 style={{margin: 0}}>Events</h4></a></MenuItem>
-                    </DropDownMenu>
-                  </MuiThemeProvider>
-                </div>
+                <div style={{ color: '#fff', borderBottom: '0px solid white', alignSelf: 'center', paddingLeft: 20 }}><a href="/posts"><h3 style={{margin: 0, color: '#fff'}}>Blog</h3></a></div>
+                <div style={{ color: '#fff', borderBottom: '0px solid white', alignSelf: 'center', paddingLeft: 40 }}><a href="/events"><h3 style={{margin: 0, color: '#fff'}}>Events</h3></a></div>
                 <div style={{ paddingLeft: 20, }}>
                   <MuiThemeProvider>
                     <SearchBar
