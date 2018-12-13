@@ -34,13 +34,10 @@ const Layout = ({ children }) => (
                 'architecture, architect, building, buildings, history, designers, vermont, events',
             },
           ]}
-          link={[
-            { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
-          ]}
         >
           <html lang="en" />
-          <link rel="icon" type="image/png" href={`${favicon}`} sizes="16x16" />
         </Helmet>
+        {console.log(favicon)}
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
