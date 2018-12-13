@@ -58,44 +58,60 @@ export class Contact extends Component {
         <MuiThemeProvider>
           <form onSubmit={this.handleSubmit}>
             <div
-              style={{ color: '#ddd', paddingRight: '0.4em', minWidth: '11em' }}
+              style={{
+                color: '#ddd',
+                paddingRight: '0.4em',
+                minWidth: '11em',
+              }}
             >
               Comments/Questions?
             </div>
             <div style={{ paddingRight: '0.8em' }}>
-              <TextField
-                type="text"
-                name="email"
-                placeholder="Email Address"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
+              <label>
+                Email Address
+                <TextField
+                  type="text"
+                  name="email"
+                  placeholder="Email Address"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                />
+              </label>
             </div>
             <div style={{ paddingRight: '0.8em' }}>
-              <TextField
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                value={this.state.subject}
-                onChange={this.handleChange}
-              />
+              <label>
+                Subject
+                <TextField
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  value={this.state.subject}
+                  onChange={this.handleChange}
+                />
+              </label>
             </div>
             <div style={{ paddingRight: '0.8em' }}>
-              <TextField
-                name="body"
-                placeholder="Your Message"
-                multiLine={true}
-                value={this.state.body}
-                onChange={this.handleChange}
-              />
+              <label>
+                Message
+                <TextField
+                  name="body"
+                  placeholder="Your Message"
+                  multiLine={true}
+                  value={this.state.body}
+                  onChange={this.handleChange}
+                />
+              </label>
             </div>
-            <input
-              type="submit"
-              value="Send"
-              disabled={
-                !this.state.subject || !this.state.body || !this.state.email
-              }
-            />
+            <label>
+              Send
+              <input
+                type="submit"
+                value="Send"
+                disabled={
+                  !this.state.subject || !this.state.body || !this.state.email
+                }
+              />
+            </label>
           </form>
         </MuiThemeProvider>
       </div>

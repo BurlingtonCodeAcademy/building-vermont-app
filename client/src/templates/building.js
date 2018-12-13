@@ -7,19 +7,15 @@ const BuildingTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiBuilding.name}</h1>
     <h3> by <Link to={`/architects/${(data.strapiBuilding.architect.name).split(' ').join('-')}`}>{data.strapiBuilding.architect.name}</Link></h3>
-    <p dangerouslySetInnerHTML={{ __html: (marked(data.strapiBuilding.description))}} />
-
-    <p>
-      Year: <Link to={`/buildings/${data.strapiBuilding.year}`}>{data.strapiBuilding.year}</Link>
-    </p>
-    <p>
-      Style: <Link to={`/buildings/${(data.strapiBuilding.style).split(' ').join('-')}`}>{data.strapiBuilding.style}</Link>
-      </p>
-      <p>
-      Type: <Link to={`/buildings/${(data.strapiBuilding.type).split(' ').join('-')}`}>{data.strapiBuilding.type}</Link>
-      </p>
-
-    <p>Location: {data.strapiBuilding.street}, <Link to={`/buildings/${(data.strapiBuilding.city).split(' ').join('-')}`}>{data.strapiBuilding.city}</Link></p>
+    <h4>
+      <div style={{ display: 'flex'}}>
+        <div style={{ paddingRight: 30 }}>Year: <Link to={`/buildings/${data.strapiBuilding.year}`}>{data.strapiBuilding.year}</Link></div>
+        <div style={{ paddingRight: 30 }}>Style: <Link to={`/buildings/${(data.strapiBuilding.style).split(' ').join('-')}`}>{data.strapiBuilding.style}</Link></div>
+        <div style={{ paddingRight: 30 }}>Type: <Link to={`/buildings/${(data.strapiBuilding.type).split(' ').join('-')}`}>{data.strapiBuilding.type}</Link></div>
+        <div style={{ paddingRight: 30 }}>Location: {data.strapiBuilding.street}, <Link to={`/buildings/${(data.strapiBuilding.city).split(' ').join('-')}`}>{data.strapiBuilding.city}</Link></div>
+      </div>
+    </h4>
+    <p dangerouslySetInnerHTML={{ __html: (marked(data.strapiBuilding.description)) }} />
   </Layout>
 );
 

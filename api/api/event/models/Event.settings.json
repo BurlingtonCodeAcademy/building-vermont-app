@@ -19,7 +19,8 @@
     },
     "location": {
       "default": "",
-      "type": "string"
+      "type": "string",
+      "maxLength": 50
     },
     "link": {
       "default": "",

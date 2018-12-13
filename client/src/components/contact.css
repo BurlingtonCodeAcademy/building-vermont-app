@@ -16,7 +16,11 @@ form input {
   font-size: 0.85em;
 }
 
+form textarea,
+form input[type='text'] {
+  color: white !important;
+}
+
 form ::placeholder {
   color: #fff;
 }
-
