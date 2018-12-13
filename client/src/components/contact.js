@@ -49,7 +49,7 @@ export class Contact extends Component {
           status: 'Email sent!',
         })
       )
-      .catch(() => this.setState({ status: 'Email failed to send...' })); // parses response to JSON
+      .catch(() => this.setState({ status: 'Email failed to send...' }));
   };
   render() {
     return (
@@ -67,8 +67,7 @@ export class Contact extends Component {
               Comments/Questions?
             </div>
             <div style={{ paddingRight: '0.8em' }}>
-              <label>
-                Email Address
+              <label for="email address">
                 <TextField
                   type="text"
                   name="email"
@@ -79,8 +78,7 @@ export class Contact extends Component {
               </label>
             </div>
             <div style={{ paddingRight: '0.8em' }}>
-              <label>
-                Subject
+              <label for="subject">
                 <TextField
                   type="text"
                   name="subject"
@@ -91,8 +89,7 @@ export class Contact extends Component {
               </label>
             </div>
             <div style={{ paddingRight: '0.8em' }}>
-              <label>
-                Message
+              <label for="message">
                 <TextField
                   name="body"
                   placeholder="Your Message"
@@ -102,8 +99,7 @@ export class Contact extends Component {
                 />
               </label>
             </div>
-            <label>
-              Send
+            <label for="send">
               <input
                 type="submit"
                 value="Send"
