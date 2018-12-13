@@ -9,9 +9,9 @@ const BuildingPage = ({ data }) => (
     <ul>
       {data.allStrapiBuilding.edges.map(document => (
         <li key={document.node.id}>
-          <h2>
+          <h3>
             <Link to={`/buildings/${(document.node.name).split(' ').join('-')}`}>{document.node.name}</Link>
-          </h2>
+          </h3>
           <p>A {document.node.style} {document.node.type} built in {document.node.year}</p>
         </li>
       ))}

@@ -17,9 +17,11 @@ export class Search extends Component {
           results[type] &&
           results[type].map(entry => (
             <li key={entry._id}>
+            <h3>
               <Link to={`/${type}/${entry._id}`}>
                 {entry.name || entry.title}
               </Link>
+              </h3>
             </li>
           ))
       )

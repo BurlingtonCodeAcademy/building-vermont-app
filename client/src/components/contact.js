@@ -57,15 +57,16 @@ export class Contact extends Component {
         <span>{this.state.status}</span>
         <MuiThemeProvider>
           <form onSubmit={this.handleSubmit}>
-            <div
+            <h4
               style={{
                 color: '#ddd',
                 paddingRight: '0.4em',
+                marginBottom: 0,
                 minWidth: '11em',
               }}
             >
               Comments/Questions?
-            </div>
+            </h4>
             <div style={{ paddingRight: '0.8em' }}>
               <label htmlFor="email address">
                 <TextField

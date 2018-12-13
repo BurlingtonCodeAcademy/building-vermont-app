@@ -20,9 +20,9 @@ const YearPage = ({ data }) => (
     <ul>
       {(uniqueYear(data.allStrapiBuilding.edges)).map(document => (
         <li key={document.node.id}>
-          <h2>
+          <h3>
             <Link to={`/buildings/${(document.node.year)}`}>{document.node.year}</Link>
-          </h2>
+          </h3>
         </li>
       ))}
     </ul>

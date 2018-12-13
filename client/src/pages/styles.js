@@ -20,9 +20,9 @@ const StylePage = ({ data }) => (
     <ul>
       {(uniqueStyle(data.allStrapiBuilding.edges)).map(document => (
         <li key={document.node.id}>
-          <h2>
+          <h3>
             <Link to={`/buildings/${(document.node.style).split(' ').join('-')}`}>{document.node.style}</Link>
-          </h2>
+          </h3>
         </li>
       ))}
     </ul>

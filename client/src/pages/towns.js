@@ -20,9 +20,9 @@ const TownPage = ({ data }) => (
     <ul>
       {(uniqueTown(data.allStrapiBuilding.edges)).map(document => (
         <li key={document.node.id}>
-          <h2>
+          <h3>
             <Link to={`/buildings/${(document.node.city).split(' ').join('-')}`}>{document.node.city}</Link>
-          </h2>
+          </h3>
         </li>
       ))}
     </ul>

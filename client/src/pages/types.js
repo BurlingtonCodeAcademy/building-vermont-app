@@ -20,9 +20,9 @@ const TypePage = ({ data }) => (
     <ul>
       {(uniqueType(data.allStrapiBuilding.edges)).map(document => (
         <li key={document.node.id}>
-          <h2>
+          <h3>
             <Link to={`/buildings/${(document.node.type).split(' ').join('-')}`}>{document.node.type}</Link>
-          </h2>
+          </h3>
         </li>
       ))}
     </ul>
