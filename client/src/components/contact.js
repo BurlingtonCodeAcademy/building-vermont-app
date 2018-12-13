@@ -67,7 +67,7 @@ export class Contact extends Component {
               Comments/Questions?
             </div>
             <div style={{ paddingRight: '0.8em' }}>
-              <label for="email address">
+              <label htmlFor="email address">
                 <TextField
                   type="text"
                   name="email"
@@ -78,7 +78,7 @@ export class Contact extends Component {
               </label>
             </div>
             <div style={{ paddingRight: '0.8em' }}>
-              <label for="subject">
+              <label htmlFor="subject">
                 <TextField
                   type="text"
                   name="subject"
@@ -89,7 +89,7 @@ export class Contact extends Component {
               </label>
             </div>
             <div style={{ paddingRight: '0.8em' }}>
-              <label for="message">
+              <label htmlFor="message">
                 <TextField
                   name="body"
                   placeholder="Your Message"
@@ -99,7 +99,7 @@ export class Contact extends Component {
                 />
               </label>
             </div>
-            <label for="send">
+            <label htmlFor="send">
               <input
                 type="submit"
                 value="Send"

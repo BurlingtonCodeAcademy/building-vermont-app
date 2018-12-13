@@ -6,6 +6,7 @@ import Contact from './contact';
 import Header from './header';
 import Footer from './footer';
 import './layout.css';
+import favicon from '../images/icons8-home-64.png';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -33,8 +34,12 @@ const Layout = ({ children }) => (
                 'architecture, architect, building, buildings, history, designers, vermont, events',
             },
           ]}
+          link={[
+            { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
+          ]}
         >
           <html lang="en" />
+          <link rel="icon" type="image/png" href={`${favicon}`} sizes="16x16" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
