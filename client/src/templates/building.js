@@ -3,10 +3,23 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import marked from 'marked';
 
+function showImageIfAvailable(image) {
+  console.log(image);
+  if (image.includes('/')) {
+    return <img src={`http://localhost:1337${image}`} />;
+  }
+  else {
+    return "No Image";
+  }
+}
+
 const BuildingTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiBuilding.name}</h1>
     <h3> by <Link to={`/architects/${(data.strapiBuilding.architect.name).split(' ').join('-')}`}>{data.strapiBuilding.architect.name}</Link></h3>
+    <figure>
+       {(showImageIfAvailable(data.strapiBuilding.image[0].url))}
+      </figure>
     <h4>
       <div style={{ display: 'flex'}}>
         <div style={{ paddingRight: 30 }}>Year: <Link to={`/buildings/${data.strapiBuilding.year}`}>{data.strapiBuilding.year}</Link></div>
@@ -32,6 +45,9 @@ export const query = graphql`
       description
       city
       street
+      image {
+        url
+      }
       architect {
         id
         name
