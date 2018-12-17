@@ -136,3 +136,20 @@ figure {
 .floating p {
   height: auto;
 }
+
+.all-posts-body {
+  max-width: 800px;
+  padding-left: 25px;
+}
+
+.all-posts-body img {
+  max-width: 480px;
+  display: block;
+  background-color: white;
+  padding: 8px 8px 24px 8px;
+  border: 1px solid gray;
+}
+
+.all-posts-body img:after {
+  content: attr(title);
+}

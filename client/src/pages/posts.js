@@ -13,7 +13,7 @@ const PostPage = ({ data }) => (
           <p>{moment(document.node.date).format('MMMM Do, YYYY')}</p>
           <h2><Link to={`/posts/${document.node.id}`}>{document.node.title}</Link></h2>
           <br />
-          <div
+          <div className="all-posts-body"
             dangerouslySetInnerHTML={{ __html: marked(document.node.body) }}
           />
           <br />
