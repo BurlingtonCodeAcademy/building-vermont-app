@@ -4,9 +4,7 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import Contact from './contact';
 import Header from './header';
-import Footer from './footer';
 import './layout.css';
-import favicon from '../images/icons8-home-64.png';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -37,7 +35,6 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        {console.log(favicon)}
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{

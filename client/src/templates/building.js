@@ -5,9 +5,8 @@ import marked from 'marked';
 import '../pages/index.css'
 
 function showImageIfAvailable(image) {
-  console.log(image);
   if (image.includes('/')) {
-    return <img src={`http://localhost:1337${image}`} />;
+    return <img alt="" src={`http://localhost:1337${image}`} />;
   }
   else {
     return "No Image";

@@ -3,41 +3,72 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import './index.css'
 
-const BuildingPage = ({ data }) => (
+function uniqueTown(arr) {
+  if (arr.length === 0) return arr;
+  let ret = [arr[0]];
+  for (var i = 1; i < arr.length; i++) { //Start loop at 1: arr[0] can never be a duplicate
+    if (arr[i-1].node.city !== arr[i].node.city) {
+      ret.push(arr[i]);
+    }
+  }
+  return ret;
+}
+
+function inThisTown(arr, town) {
+  if (arr.length === 0) return arr;
+  let ret = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (town === arr[i].node.city) {
+      ret.push(arr[i]);
+    }
+  }
+  return ret.sort(function (a, b) {
+    let first = a.node.name.toUpperCase();
+    let second = b.node.name.toUpperCase();
+  
+    return first.localeCompare(second);
+  });
+}
+
+const TownPage = ({ data }) => (
   <Layout>
-    <h1>Buildings</h1>
+    <h1>All Buildings by Town</h1>
     <ul>
-      {data.allStrapiBuilding.edges.map(document => (
+      {(uniqueTown(data.allStrapiBuilding.edges)).map(document => (
         <li key={document.node.id}>
-          <h3>
+          <div className="column">
+          <h3 style={{marginRight: 4}}><Link to={`/buildings/${(document.node.city).split(' ').join('-')}`}>{document.node.city}</Link></h3>
+          <ul>{(inThisTown(data.allStrapiBuilding.edges, document.node.city)).map(document => (
+        <li key={document.node.id}>
+          <h4>
             <Link to={`/buildings/${(document.node.name).split(' ').join('-')}`}>{document.node.name}</Link>
-          </h3>
-          <p>A {document.node.style} {document.node.type} built in {document.node.year}</p>
+          </h4>
+        </li>
+      ))}
+
+          </ul>
+          </div>
         </li>
       ))}
     </ul>
   </Layout>
 );
 
-export default BuildingPage;
+
+export default TownPage;
 
 export const pageQuery = graphql`
-  query BuildingQuery {
+  query TownQuery {
     allStrapiBuilding(
       sort: {
-        fields: [ name ], order: ASC
+        fields: [ city ], order: ASC
       }
     ) {
       edges {
         node {
           id
           name
-          style
-          year
-          type
-          description
           city
-          street
             }
       }
     }

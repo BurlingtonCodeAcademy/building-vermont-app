@@ -22,7 +22,12 @@ function builtInYear(arr, year) {
       ret.push(arr[i]);
     }
   }
-  return ret;
+  return ret.sort(function (a, b) {
+    let first = a.node.name.toUpperCase();
+    let second = b.node.name.toUpperCase();
+  
+    return first.localeCompare(second);
+  });
 }
 
 const YearPage = ({ data }) => (
