@@ -73,7 +73,7 @@ class Calendar extends Component {
         const cloneDay = day;
         const eventsToday = events.filter(matchDay).map(day => (
           <Link
-            to={`/events/${dateFns.format(day.date, 'MM-DD-YY')}/${day.name.split(' ').join('-')}`}
+            to={`/events/${dateFns.format(day.date, 'MM-DD-YY')}`}
             key={Math.random()}
             className="event"
           >

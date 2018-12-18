@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
 const SHORTNAME = setShortName;
 const WEBSITE_URL = 'http://www.example.com';

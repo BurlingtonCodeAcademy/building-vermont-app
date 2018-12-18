@@ -5,7 +5,7 @@ import './index.css'
 
 const BuildingPage = ({ data }) => (
   <Layout>
-    <h1>Buildings</h1>
+    <h1>All Buildings</h1>
     <ul>
       {data.allStrapiBuilding.edges.map(document => (
         <li key={document.node.id}>
