@@ -144,12 +144,18 @@ figure {
 
 .all-posts-body img {
   max-width: 480px;
+  margin: 30px;
   display: block;
   background-color: white;
-  padding: 8px 8px 24px 8px;
+  padding: 8px 8px 28px 8px;
   border: 1px solid gray;
+  box-shadow: 2px 2px 3px lightgray;
 }
 
-.all-posts-body img:after {
-  content: attr(title);
+h5 {
+  position: relative;
+  top: -54px;
+  margin: 0 0 0 44px;
+  color: gray;
+  font-weight: 400;
 }
