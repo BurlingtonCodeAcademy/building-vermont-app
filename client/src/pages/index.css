@@ -152,10 +152,24 @@ figure {
   box-shadow: 2px 2px 3px lightgray;
 }
 
+.post-body {
+  max-width: 850px;
+  padding-left: 25px;
+}
+
+.post-body img {
+  max-width: 720px;
+  margin: 30px;
+  display: block;
+  background-color: white;
+}
+
 h5 {
+  background-color: rgb(255, 255, 255, 0.2);
   position: relative;
   top: -54px;
-  margin: 0 0 0 44px;
+  margin: 0 0 0 34px;
+  padding: 0 0 0 10px;
   color: gray;
   font-weight: 400;
 }

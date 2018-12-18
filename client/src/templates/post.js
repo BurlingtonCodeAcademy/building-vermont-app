@@ -19,7 +19,7 @@ const PostTemplate = ({ data }) => {
     <p>{moment(data.strapiPost.date).format('MMMM Do, YYYY')}</p>
     <h2>{data.strapiPost.title}</h2>
 
-    <div
+    <div className="post-body"
       dangerouslySetInnerHTML={{ __html: marked(data.strapiPost.body) }}
     />
     <p>Posted by: {data.strapiPost.author}</p>
