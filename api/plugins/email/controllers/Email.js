@@ -40,7 +40,7 @@ module.exports = {
     await strapi.plugins.email.services.email.send(
       {
         from: options.email,
-        to: 'leightjohnson93@gmail.com',
+        to: 'devincoleman@mac.com',
         replyTo: options.email,
         subject: options.subject,
         text: options.body,
