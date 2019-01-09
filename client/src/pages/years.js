@@ -53,7 +53,7 @@ export const pageQuery = graphql`
   query YearQuery {
     allStrapiBuilding(
       sort: {
-        fields: [ year ], order: DESC
+        fields: [ year ], order: ASC
       }
     ) {
       edges {
