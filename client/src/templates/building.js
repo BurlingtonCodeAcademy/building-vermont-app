@@ -4,7 +4,6 @@ import Layout from '../components/layout';
 import marked from 'marked';
 import '../pages/index.css'
 
-let imageArray = []
 const strapiHost = "http://localhost:1337"
 
 const BuildingTemplate = ({ data }) => (
@@ -13,15 +12,10 @@ const BuildingTemplate = ({ data }) => (
     <h3> by <Link to={`/architects/${(data.strapiBuilding.architect.name).split(' ').join('-')}`}>{data.strapiBuilding.architect.name}</Link></h3>
 
     <div className="building-images">
-    {data.strapiBuilding.image.forEach(function(image) {
-      imageArray.push(<a href={strapiHost + image.url}><img key={image.url.slice(9,39)} src={strapiHost + image.url} /></a>)
-    })}
-    {imageArray[0]}
-    {imageArray[1]}
-    {imageArray[2]}
-    {imageArray[3]}
+    {data.strapiBuilding.image.map((image) => (
+      <a href={strapiHost + image.url}><img key={image.url.slice(9,39)} alt="" src={strapiHost + image.url} /></a>
+    ))}
     </div>
-    {imageArray = []}
 
     <h4>
       <div style={{ display: 'flex'}}>
