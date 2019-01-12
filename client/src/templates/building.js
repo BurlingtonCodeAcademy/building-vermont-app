@@ -21,6 +21,7 @@ const BuildingTemplate = ({ data }) => (
     {imageArray[2]}
     {imageArray[3]}
     </div>
+    {imageArray = []}
 
     <h4>
       <div style={{ display: 'flex'}}>
