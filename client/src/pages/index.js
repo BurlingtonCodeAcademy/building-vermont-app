@@ -4,6 +4,12 @@ import './index.css'
 
 const IndexPage = () => (
   <div className="container-image">
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
       <div className="box" id="one"><Link to="/architects"><h4>Architects</h4></Link></div>
       <div className="box" id="two"><Link to="/buildings"><h4>Buildings</h4></Link></div>
       <div className="box" id="three"><Link to="/posts"><h4>Blog</h4></Link></div>
