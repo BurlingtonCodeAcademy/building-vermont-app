@@ -13,7 +13,7 @@ const BuildingTemplate = ({ data }) => (
 
     <div className="building-images">
     {data.strapiBuilding.image.map((image) => (
-      <a href={PATH + image.url}><img key={image.url.slice(9,39)} alt="" src={PATH + image.url} /></a>
+      <a href={PATH + image.url}><img key={image.id} alt="" src={PATH + image.url} /></a>
     ))}
     </div>
 
@@ -44,6 +44,7 @@ export const query = graphql`
       street
       image {
         url
+        id
       }
       architect {
         id
