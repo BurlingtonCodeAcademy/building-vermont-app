@@ -183,3 +183,7 @@ h5 {
   max-height: 360px;
   padding: 2vw;
 }
+
+.building-images img:hover {
+opacity: 0.5;
+}
