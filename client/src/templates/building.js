@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import marked from 'marked';
 import '../pages/index.css'
 
-const strapiHost = "http://localhost:1337"
+const PATH = "http://localhost:1337"
 
 const BuildingTemplate = ({ data }) => (
   <Layout>
@@ -13,7 +13,7 @@ const BuildingTemplate = ({ data }) => (
 
     <div className="building-images">
     {data.strapiBuilding.image.map((image) => (
-      <a href={strapiHost + image.url}><img key={image.url.slice(9,39)} alt="" src={strapiHost + image.url} /></a>
+      <a href={PATH + image.url}><img key={image.url.slice(9,39)} alt="" src={PATH + image.url} /></a>
     ))}
     </div>
 
