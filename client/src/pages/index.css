@@ -173,3 +173,13 @@ h5 {
   color: gray;
   font-weight: 400;
 }
+
+.building-images {
+  display: flex;
+}
+
+.building-images img {
+  flex: 1;
+  max-height: 360px;
+  padding: 2vw;
+}

@@ -4,22 +4,24 @@ import Layout from '../components/layout';
 import marked from 'marked';
 import '../pages/index.css'
 
-function showImageIfAvailable(image) {
-  if (image.includes('/')) {
-    return <img alt="" src={`http://localhost:1337${image}`} />;
-  }
-  else {
-    return "No Image";
-  }
-}
+let imageArray = []
+const strapiHost = "http://localhost:1337"
 
 const BuildingTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiBuilding.name}</h1>
     <h3> by <Link to={`/architects/${(data.strapiBuilding.architect.name).split(' ').join('-')}`}>{data.strapiBuilding.architect.name}</Link></h3>
-    <figure>
-       {(showImageIfAvailable(data.strapiBuilding.image[0].url))}
-      </figure>
+
+    <div className="building-images">
+    {data.strapiBuilding.image.forEach(function(image) {
+      imageArray.push(<a href={strapiHost + image.url}><img key={image.url.slice(9,39)} src={strapiHost + image.url} /></a>)
+    })}
+    {imageArray[0]}
+    {imageArray[1]}
+    {imageArray[2]}
+    {imageArray[3]}
+    </div>
+
     <h4>
       <div style={{ display: 'flex'}}>
         <div style={{ paddingRight: 30 }}>Year: <Link to={`/buildings/${data.strapiBuilding.year}`}>{data.strapiBuilding.year}</Link></div>
