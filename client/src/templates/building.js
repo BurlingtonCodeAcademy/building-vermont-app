@@ -13,7 +13,7 @@ const BuildingTemplate = ({ data }) => (
 
     <div className="building-images">
     {data.strapiBuilding.image.map((image) => (
-      <a href={PATH + image.url}><img key={image.id} alt="" src={PATH + image.url} /></a>
+      <a key={image.id} href={PATH + image.url}><img alt="" src={PATH + image.url} /></a>
     ))}
     </div>
 
