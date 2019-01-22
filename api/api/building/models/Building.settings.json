@@ -22,8 +22,9 @@
       "required": false
     },
     "architect": {
-      "model": "architect",
-      "via": "buildings"
+      "collection": "architect",
+      "via": "buildings",
+      "dominant": true
     },
     "style": {
       "default": "",

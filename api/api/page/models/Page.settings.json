@@ -1,0 +1,21 @@
+{
+  "connection": "default",
+  "collectionName": "page",
+  "info": {
+    "name": "page",
+    "description": "a collection of static html pages"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "contents": {
+      "default": "",
+      "type": "text"
+    }
+  }
+}
