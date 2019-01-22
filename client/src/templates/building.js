@@ -4,22 +4,19 @@ import Layout from '../components/layout';
 import marked from 'marked';
 import '../pages/index.css'
 
-function showImageIfAvailable(image) {
-  if (image.includes('/')) {
-    return <img alt="" src={`http://localhost:1337${image}`} />;
-  }
-  else {
-    return "No Image";
-  }
-}
+const PATH = "http://localhost:1337"
 
 const BuildingTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiBuilding.name}</h1>
     <h3> by <Link to={`/architects/${(data.strapiBuilding.architect.name).split(' ').join('-')}`}>{data.strapiBuilding.architect.name}</Link></h3>
-    <figure>
-       {(showImageIfAvailable(data.strapiBuilding.image[0].url))}
-      </figure>
+
+    <div className="building-images">
+    {data.strapiBuilding.image.map((image) => (
+      <a key={image.id} href={PATH + image.url}><img alt="" src={PATH + image.url} /></a>
+    ))}
+    </div>
+
     <h4>
       <div style={{ display: 'flex'}}>
         <div style={{ paddingRight: 30 }}>Year: <Link to={`/buildings/${data.strapiBuilding.year}`}>{data.strapiBuilding.year}</Link></div>
@@ -47,6 +44,7 @@ export const query = graphql`
       street
       image {
         url
+        id
       }
       architect {
         id

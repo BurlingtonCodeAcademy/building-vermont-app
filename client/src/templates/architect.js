@@ -9,11 +9,9 @@ const ArchitectTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiArchitect.name}</h1>
     <div className="floating">
-      {/* <div className=".index-column"> */}
       <figure>
         <Img fixed={data.strapiArchitect.image.childImageSharp.fixed} />
       </figure>
-      {/* </div> */}
       <p dangerouslySetInnerHTML={{ __html: (marked(data.strapiArchitect.bio)) }} />
     </div>
     <h3>&nbsp;Designed by {data.strapiArchitect.name}:</h3>
