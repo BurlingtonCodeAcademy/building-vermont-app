@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "event",
   "info": {
     "name": "event",
     "description": "A database of events"
@@ -18,6 +18,11 @@
       "type": "date"
     },
     "location": {
+      "default": "",
+      "type": "string",
+      "maxLength": 50
+    },
+    "link": {
       "default": "",
       "type": "string"
     }

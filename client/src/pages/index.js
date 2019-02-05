@@ -1,41 +1,23 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
-import Layout from '../components/layout';
+import React from 'react'
+import { Link } from 'gatsby'
+import './index.css'
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <h1>These are all the buildings</h1>
-    <ul>
-      {data.allStrapiBuilding.edges.map(document => (
-        <li key={document.node.id}>
-          <h2>
-            <Link to={`/${document.node.id}`}>{document.node.name}</Link>
-          </h2>
-          <p>A {document.node.style} {document.node.type} built in {document.node.year}</p>
-        </li>
-      ))}
-    </ul>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-);
+const IndexPage = () => (
+  <div className="container-image">
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+      <div className="box" id="one"><Link to="/architects"><h4>Architects</h4></Link></div>
+      <div className="box" id="two"><Link to="/buildings"><h4>Buildings</h4></Link></div>
+      <div className="box" id="three"><Link to="/posts"><h4>Blog</h4></Link></div>
+      <div className="box" id="four"><Link to="/events"><h4>Events</h4></Link></div>
+      <h1 className="index-row" id="five">Building<br /> Vermont</h1><hr/>
+      
+      <h3 className="index-row" id="six">The Past, Present, and Future<br />of Vermont Architecture</h3>
+  </div>
+)
 
-export default IndexPage;
-
-export const pageQuery = graphql`
-  query IndexQuery {
-    allStrapiBuilding {
-      edges {
-        node {
-          id
-          name
-          style
-          year
-          type
-          description
-          city
-          street
-            }
-      }
-    }
-  }
-`;
+export default IndexPage

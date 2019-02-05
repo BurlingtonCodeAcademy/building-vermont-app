@@ -32,6 +32,8 @@
   },
   "bundleDependencies": false,
   "dependencies": {
+    "nodemailer": "^4.7.0",
+    "sendmail": "^1.4.1",
     "strapi-provider-email-sendmail": "3.0.0-alpha.15"
   },
   "deprecated": false,

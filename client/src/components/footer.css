@@ -1,0 +1,70 @@
+.footer {
+  display: flex;
+  background-color: lightgray;
+  width: 100%;
+  justify-content: space-around;
+  padding-left: 40px;
+}
+
+.contact-form {
+  border: 0px solid black;
+  width: 50em;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  /* display:  grid;
+  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+        "name email"
+        "body body"
+        "submit submit" */
+}
+
+.form-row {
+  display: flex;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.name-input {
+  border: 1px solid #777;
+  border-radius: 3px;
+  margin: 2px;
+  padding: 2px;
+  flex: 1;
+  /* grid-area: "name" */
+}
+
+.email-input {
+  border: 1px solid #777;
+  border-radius: 3px;
+  margin: 2px;
+  padding: 2px;
+  flex: 1;
+  /* grid-area: "email" */
+}
+
+.form-body {
+  border: 1px solid #777;
+  border-radius: 3px;
+  margin: 2px;
+  padding: 2px;
+  width: 18em;
+  /* grid-area: "body"; */
+}
+
+.submit-button {
+  border: 1px solid #777;
+  border-radius: 3px;
+  color: #777;
+  background-color: #fff;
+  margin: 2px;
+  padding: 2px;
+  width: 100%;
+  /* grid-area: "submit"; */
+}

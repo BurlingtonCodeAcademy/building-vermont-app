@@ -2,21 +2,24 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import moment from 'moment';
+import marked from 'marked';
+import './index.css'
 
 const PostPage = ({ data }) => (
   <Layout>
-    <h1>The Future of Architecture in Vermont Blog</h1>
     <ul>
       {data.allStrapiPost.edges.map(document => (
         <li key={document.node.id}>
-          <p>{moment(document.node.date).format("MMMM Do, YYYY")}</p>
-          <h2>
-            {document.node.title}
-          </h2>
-            
-            <div dangerouslySetInnerHTML={{ __html: (document.node.body)}} />          
-          <p>Posted by: {document.node.author}
-          </p>
+          <p>{moment(document.node.date).format('MMMM Do, YYYY')}</p>
+          <h2><Link to={`/posts/${document.node.id}`}>{document.node.title}</Link></h2>
+          <br />
+          <div className="all-posts-body"
+            dangerouslySetInnerHTML={{ __html: marked(document.node.body) }}
+          />
+          <br />
+          <p>Posted by: {document.node.author}</p>
+          <hr />
+          <br />
         </li>
       ))}
     </ul>
@@ -27,9 +30,10 @@ export default PostPage;
 
 export const pageQuery = graphql`
   query PostQuery {
-    allStrapiPost {
+    allStrapiPost(sort: { fields: [date], order: DESC }) {
       edges {
         node {
+          id
           title
           body
           author

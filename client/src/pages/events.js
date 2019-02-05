@@ -1,29 +1,44 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { /*Link, */graphql } from 'gatsby';
 import Layout from '../components/layout';
-import moment from 'moment';
+import Calendar from '../components/calendar';
+import '../components/calendar.css';
+import './index.css'
 
-const IndexPage = ({ data }) => (
+const EventPage = ({ data }) => (
   <Layout>
     <h1>Upcoming Events</h1>
-    <ul>
+    <Calendar
+      className="App"
+      events={data.allStrapiEvent.edges.map(document => document.node)}
+    />
+    {/* <ul>
       {data.allStrapiEvent.edges.map(document => (
-        <li key={document.node.id}>
-          <h2>
-            {document.node.name}
-          </h2>
-          <p>{moment(document.node.date).format("MMMM Do")}</p>
+        <li key={document.node.name.split(' ').join('-')}>
+          <p>
+            <Link
+              to={`/events/${moment(document.node.date).format(
+                'MM-DD-YY'
+              )}/${document.node.name.split(' ').join('-')}`}
+            >
+              {document.node.name}
+            </Link>
+          </p>
         </li>
       ))}
-    </ul>
+    </ul> */}
   </Layout>
 );
 
-export default IndexPage;
+export default EventPage;
 
 export const pageQuery = graphql`
   query EventQuery {
-    allStrapiEvent {
+    allStrapiEvent(
+      sort: {
+        fields: [ date ], order: ASC
+      }
+    ) {
       edges {
         node {
           id

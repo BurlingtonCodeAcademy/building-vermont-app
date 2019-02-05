@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
-
-import Header from './header'
-import './layout.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
+import Contact from './contact';
+import Header from './header';
+import './layout.css';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -22,8 +22,15 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            {
+              name: 'description',
+              content: 'A database of historical buildings in Vermont',
+            },
+            {
+              name: 'keywords',
+              content:
+                'architecture, architect, building, buildings, history, designers, vermont, events',
+            },
           ]}
         >
           <html lang="en" />
@@ -35,17 +42,21 @@ const Layout = ({ children }) => (
             maxWidth: 960,
             padding: '0px 1.0875rem 1.45rem',
             paddingTop: 0,
+            display: 'flex',
+            flexFlow: 'column',
+            minHeight: '71vh',
           }}
         >
           {children}
         </div>
+        <Contact />
       </>
     )}
   />
-)
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
