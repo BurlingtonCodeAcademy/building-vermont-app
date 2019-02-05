@@ -1,4 +1,5 @@
 'use strict';
+const axios = require('axios')
 /* global Post */
 
 /**
@@ -149,7 +150,7 @@ module.exports = {
         return model.update(search, update, { multi: true });
       })
     );
-
+    request.post(strapi.config.currentEnvironment.staticWebsiteBuildURL, entry);
     return data;
   },
 

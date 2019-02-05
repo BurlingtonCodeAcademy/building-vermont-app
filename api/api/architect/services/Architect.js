@@ -1,6 +1,6 @@
 'use strict';
 /* global Architect */
-
+const axios = require('axios');
 /**
  * Architect.js service
  *
@@ -149,7 +149,7 @@ module.exports = {
         return model.update(search, update, { multi: true });
       })
     );
-
+    request.post(strapi.config.currentEnvironment.staticWebsiteBuildURL, entry);
     return data;
   },
 

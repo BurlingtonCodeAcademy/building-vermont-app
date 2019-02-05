@@ -1,6 +1,7 @@
 'use strict';
 
 const _ = require('lodash');
+const axios = require('axios');
 
 /**
  * A set of functions called "actions" for `ContentManager`
@@ -160,6 +161,7 @@ module.exports = {
     const response = await query.findOne({
       id: params.id
     });
+    axios.post(strapi.config.currentEnvironment.staticWebsiteBuildURL);
 
     params[primaryKey] = response[primaryKey];
     params.values = Object.keys(JSON.parse(JSON.stringify(response))).reduce((acc, current) => {
