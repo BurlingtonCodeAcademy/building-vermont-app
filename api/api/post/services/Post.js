@@ -123,8 +123,6 @@ module.exports = {
       .map(ast => ast.alias)
       .join(' ');
 
-    request.post(strapi.config.currentEnvironment.staticWebsiteBuildURL, entry);
-
     // Note: To get the full response of Mongo, use the `remove()` method
     // or add spent the parameter `{ passRawResult: true }` as second argument.
     const data = await Post
@@ -152,7 +150,7 @@ module.exports = {
         return model.update(search, update, { multi: true });
       })
     );
-
+    request.post(strapi.config.currentEnvironment.staticWebsiteBuildURL, entry);
     return data;
   },
 
