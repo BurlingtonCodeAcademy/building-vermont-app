@@ -1,4 +1,5 @@
 'use strict';
+const axios = require('axios')
 /* global Post */
 
 /**
@@ -121,6 +122,8 @@ module.exports = {
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
+
+    request.post(strapi.config.currentEnvironment.staticWebsiteBuildURL, entry);
 
     // Note: To get the full response of Mongo, use the `remove()` method
     // or add spent the parameter `{ passRawResult: true }` as second argument.
