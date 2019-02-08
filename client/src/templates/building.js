@@ -9,7 +9,7 @@ const PATH = "http://localhost:1337"
 const BuildingTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiBuilding.name}</h1>
-    <h3> by <Link to={`/architects/${(data.strapiBuilding.architect.name).split(' ').join('-')}`}>{data.strapiBuilding.architect.name}</Link></h3>
+    <h3> by <Link to={`/architects/${(data.strapiBuilding.architect[0].name).split(' ').join('-')}`}>{data.strapiBuilding.architect[0].name}</Link></h3>
 
     <div className="building-images">
     {data.strapiBuilding.image.map((image) => (
