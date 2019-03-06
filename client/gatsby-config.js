@@ -24,7 +24,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-strapi',
       options: {
-        apiURL: 'http://localhost:1337',
+        apiURL: 'https://api.vermontarchitecture.site',
         contentTypes: [
           // List of the Content Types you want to be able to request from Gatsby.
           'building',
