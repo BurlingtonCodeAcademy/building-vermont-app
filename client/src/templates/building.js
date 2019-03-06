@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import marked from 'marked';
 import '../pages/index.css'
 
-const PATH = "http://localhost:1337"
+const PATH = "https://api.vermontarchitecture.site/"
 
 const BuildingTemplate = ({ data }) => (
   <Layout>
