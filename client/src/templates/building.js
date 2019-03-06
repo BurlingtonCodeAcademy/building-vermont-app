@@ -4,12 +4,13 @@ import Layout from '../components/layout';
 import marked from 'marked';
 import '../pages/index.css'
 
-const PATH = "http://localhost:1337"
+const PATH = "https://api.vermontarchitecture.site/"
 
 const BuildingTemplate = ({ data }) => (
   <Layout>
+  {console.log(data.strapiBuilding.architect.name)}
     <h1>{data.strapiBuilding.name}</h1>
-    <h3> by <Link to={`/architects/${(data.strapiBuilding.architect[0].name).split(' ').join('-')}`}>{data.strapiBuilding.architect[0].name}</Link></h3>
+    <h3> by <Link to={`/architects/${(data.strapiBuilding.architect.name).split(' ').join('-')}`}>{data.strapiBuilding.architect[0].name}</Link></h3>
 
     <div className="building-images">
     {data.strapiBuilding.image.map((image) => (
