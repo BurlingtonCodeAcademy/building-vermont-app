@@ -21,7 +21,7 @@ class Header extends Component {
     };
   }
   componentDidMount = async () => {
-    const PATH = 'http://localhost:1337';
+    const PATH = 'https://api.vermontarchitecture.site/';
     const contentTypes = ['buildings', 'architects', 'events', 'posts'];
     const [buildings, architects, events, posts] = await Promise.all(
       contentTypes.map(type =>

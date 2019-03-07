@@ -26,7 +26,7 @@ export class Contact extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const PATH = 'http://localhost:1337';
+    const PATH = 'https://api.vermontarchitecture.site/';
     const { subject, email, body } = this.state;
     fetch(`${PATH}/email`, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
